@@ -4,7 +4,7 @@ import Icon from './Icon.astro';
 import foto from '../assets/adrian-doria.png';
 import { perfil } from '../data/perfil';
 ---
-<section id="topo" class="mx-auto grid max-w-6xl items-center gap-10 px-5 pt-8 pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 md:px-8 md:pt-20 md:pb-28">
+<section id="topo" class="mx-auto grid max-w-6xl items-center gap-10 px-5 pt-8 pb-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 md:px-8 md:pt-20 md:pb-20">
   <div class="order-2 lg:order-1">
     <h1 class="text-[clamp(3rem,9vw,5.75rem)] font-semibold">{perfil.nome}</h1>
 
@@ -22,7 +22,7 @@ import { perfil } from '../data/perfil';
     <div class="mt-8 flex flex-wrap items-center gap-2 sm:gap-3">
       <a
         href={`mailto:${perfil.email}`}
-        class="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-3 sm:px-5 font-medium text-on-accent shadow-[var(--shadow)] transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 sm:w-auto sm:px-5 font-medium text-on-accent shadow-[var(--shadow)] transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
       >
         <Icon name="mail" size={18} /> Enviar e-mail
       </a>
@@ -62,14 +62,15 @@ import { perfil } from '../data/perfil';
 </section>
 
 <style>
-  /* Bloco azul claro deslocado atrás da foto */
+  /* Fundo de pontos, como a tela do n8n: textura que some nas bordas, sem cara de cartão */
   .portrait::before {
     content: '';
     position: absolute;
-    inset: 0;
-    border-radius: 1.75rem;
-    background: var(--accent);
-    transform: translate(0.9rem, 0.9rem) rotate(3deg);
-    opacity: 0.55;
+    inset: -2rem -3.5rem -3.5rem -2rem;
+    background-image: radial-gradient(color-mix(in oklch, var(--accent-ink) 55%, transparent) 1.4px, transparent 1.6px);
+    background-size: 18px 18px;
+    mask-image: radial-gradient(closest-side, #000 72%, transparent);
+    -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent);
+    pointer-events: none;
   }
 </style>

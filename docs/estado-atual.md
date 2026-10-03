@@ -9,6 +9,7 @@ Atualizado em 2026-10-03. Leia ao retomar. Mantenha curto: substitua o que ficou
 - `PRODUCT.md` aprovado. Impeccable instalado globalmente.
 - Página única: header, hero com foto, fluxo de conhecimentos (estilo n8n), experiência/formação/certificações, projetos (placeholder), contato. Conteúdo em `src/data/perfil.ts`, vindo do currículo (D5).
 - `DESIGN.md` v0 (tokens, tipografia, breakpoints, movimento).
+- Rodada 1 de melhorias: faixa de ferramentas (6 miniaturas), resumo no singular, nova frase dos conhecimentos, experiências sem datas, projetos reais (Agent Control, SiteFactory, portfólio), fundo de pontos atrás da foto.
 
 ## Testado
 - Build de produção ok.
@@ -16,18 +17,20 @@ Atualizado em 2026-10-03. Leia ao retomar. Mantenha curto: substitua o que ficou
 - Não validado ainda: navegação por teclado, contraste medido, animação do fluxo em celular real.
 
 ## Falta (próximos passos, em ordem)
-1. Usuário revisa a v0 (`npm run dev` → http://localhost:4321) e lista melhorias.
-2. Aplicar melhorias; opcional: `/sf:design-ref` se quiser explorar outra direção.
-3. `/sf:validar` → `/sf:revisar` → aprovação do `DESIGN.md`.
-4. Hospedagem/deploy → `/sf:finalizar`.
+1. Deploy na Vercel (usuário importando o repo pelo site) → registrar a URL aqui e em `docs/arquitetura.md`.
+2. Usuário envia prints do Agent Control e da SiteFactory (sem dados de clientes) para as miniaturas dos projetos.
+3. Usuário revisa e lista novas melhorias.
+4. Aplicar melhorias; opcional: `/sf:design-ref` se quiser explorar outra direção.
+5. `/sf:validar` → `/sf:revisar` → aprovação do `DESIGN.md`.
+6. `/sf:finalizar`.
 
 ## Decisões pendentes do usuário
 - Melhorias na v0.
-- Conteúdo: projetos (com links), ajustes de textos/experiências.
+- Prints dos projetos; tornar público algum repositório (ex.: o do portfólio)?
 - Hospedagem/deploy e domínio.
 
 ## Última validação
 - 2026-10-03: screenshots próprios (sem `sf:qa`).
 
 ## Problemas conhecidos
-- Seção Projetos é `[PLACEHOLDER]`.
+- Agent Control e SiteFactory sem print (painel com ícone no lugar).

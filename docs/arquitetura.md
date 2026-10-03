@@ -10,9 +10,10 @@ Página única (`src/pages/index.astro`). Conteúdo centralizado em `src/data/pe
 
 1. **Header** fixo: nome, âncoras (md+), alternância de tema, botão Contato.
 2. **Hero** (`#topo`): foto, nome, frase "Entendo o negócio. / Automatizo o trabalho.", resumo, local, CTAs (e-mail, LinkedIn, GitHub).
+2b. **Ferramentas**: 6 miniaturas.
 3. **Conhecimentos** (`#conhecimentos`): fluxo Negócio → Dados → Automação & IA.
-4. **Experiência** (`#experiencia`): 3 cargos + formação + certificações.
-5. **Projetos** (`#projetos`): `[PLACEHOLDER]` + link do GitHub.
+4. **Experiência** (`#experiencia`): 3 cargos (sem datas) + formação + certificações.
+5. **Projetos** (`#projetos`): Agent Control, SiteFactory, este portfólio + link do GitHub.
 6. **Contato** (`#contato`) + rodapé.
 
 ## Hospedagem
@@ -27,3 +28,6 @@ A definir.
 | D4 | 2026-10-03 | Alternância de tema claro/escuro (padrão = sistema) | Pedido do usuário |
 | D5 | 2026-10-03 | Conteúdo inicial tirado do currículo do usuário (`curriculo-base.md` do projeto Buscador de Vagas), sem acréscimos | Usuário autorizou; dados reais em vez de placeholders |
 | D6 | 2026-10-03 | v0 implementada antes de referências/direção formal (`DESIGN.md` documenta a v0) | Usuário quer ver o site e propor melhorias a partir dele |
+| D7 | 2026-10-03 | Experiências sem datas; resumo cita "uma empresa de grande porte" | Pedido do usuário |
+| D8 | 2026-10-03 | Projetos: Agent Control, SiteFactory e o portfólio, descritos a partir dos READMEs; repositórios privados, sem link para o código | Pedido do usuário; repos são privados |
+| D9 | 2026-10-03 | Dev toolbar do Astro desligada | Não aparecer nos prints/screenshots |

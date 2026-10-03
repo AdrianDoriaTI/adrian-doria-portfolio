@@ -1,14 +1,12 @@
 ---
 import Icon from './Icon.astro';
-import { fluxo } from '../data/perfil';
+import { fluxo, fluxoIntro } from '../data/perfil';
 ---
 <section id="conhecimentos" class="border-t border-line bg-surface">
   <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
     <div class="max-w-2xl">
       <h2 class="text-[clamp(2rem,5vw,3.25rem)] font-semibold">Do negócio à automação</h2>
-      <p class="mt-4 text-muted">
-        Entendo o processo, meço com dados e automatizo com IA, como um fluxo em que cada etapa alimenta a próxima.
-      </p>
+      <p class="mt-4 text-muted">{fluxoIntro}</p>
     </div>
 
     <div class="flow mt-12 md:mt-16" data-flow>

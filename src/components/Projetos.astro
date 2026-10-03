@@ -1,21 +1,80 @@
 ---
+import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
-import { perfil } from '../data/perfil';
+import { perfil, projetos } from '../data/perfil';
+import printPortfolio from '../assets/projetos/portfolio.png';
+
+const imagens = { portfolio: printPortfolio } as const;
 ---
 <section id="projetos" class="border-t border-line bg-surface">
-  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-20 md:flex-row md:items-end md:justify-between md:px-8 md:py-24">
-    <div class="max-w-xl">
-      <h2 class="text-[clamp(2rem,5vw,3.25rem)] font-semibold">Projetos</h2>
-      <p class="mt-4 text-muted">[PLACEHOLDER] Automações, agentes e dashboards em destaque entram aqui. Enquanto isso, o código está no GitHub.</p>
+  <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-[clamp(2rem,5vw,3.25rem)] font-semibold">Projetos</h2>
+        <p class="mt-4 text-muted">O que venho construindo com automação, IA e sites.</p>
+      </div>
+      <a
+        href={perfil.github}
+        target="_blank"
+        rel="noopener"
+        class="group inline-flex shrink-0 items-center gap-2 self-start font-medium text-accent-ink underline-offset-4 hover:underline md:self-auto"
+      >
+        <Icon name="github" size={18} /> Perfil no GitHub
+        <Icon name="arrow" size={16} class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      </a>
     </div>
-    <a
-      href={perfil.github}
-      target="_blank"
-      rel="noopener"
-      class="group inline-flex shrink-0 items-center gap-3 self-start rounded-full border border-line px-5 py-3 font-medium transition-colors hover:border-ink md:self-auto"
-    >
-      <Icon name="github" size={18} /> github.com/AdrianDoriaTI
-      <Icon name="arrow" size={16} class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-    </a>
+
+    <div class="mt-12 flex flex-col gap-14 md:mt-16 md:gap-20">
+      {projetos.map((p) => (
+        <article class="grid items-center gap-6 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-12">
+          <div class="visual relative aspect-[16/10] overflow-hidden rounded-2xl border border-line">
+            {p.imagem ? (
+              <Image
+                src={imagens[p.imagem as keyof typeof imagens]}
+                alt={`Tela do projeto ${p.nome}`}
+                widths={[480, 800, 1200]}
+                sizes="(min-width: 768px) 30rem, 100vw"
+                class="size-full object-cover object-top"
+              />
+            ) : (
+              <div class="visual-vazio grid size-full place-items-center">
+                <span class="relative grid size-20 place-items-center rounded-2xl bg-accent text-on-accent shadow-[var(--shadow)]">
+                  <Icon name={p.icone} size={36} />
+                </span>
+              </div>
+            )}
+          </div>
+
+          <div>
+            <div class="flex flex-wrap items-center gap-3">
+              <h3 class="text-2xl font-semibold md:text-3xl">{p.nome}</h3>
+              <span class="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent-ink">{p.status}</span>
+            </div>
+            <p class="mt-3 text-lg font-medium">{p.frase}</p>
+            <p class="mt-2 max-w-[60ch] text-muted">{p.detalhe}</p>
+            <ul class="mt-5 flex flex-wrap gap-2" aria-label={`Tecnologias de ${p.nome}`}>
+              {p.tags.map((t) => (
+                <li class="rounded-full border border-line px-3 py-1 text-sm">{t}</li>
+              ))}
+            </ul>
+            {p.imagem !== 'portfolio' && (
+              <p class="mt-5 flex items-center gap-1.5 text-sm text-muted">
+                <Icon name="lock" size={15} /> Repositório privado
+              </p>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
 </section>
+
+<style>
+  .visual { background: var(--paper); }
+  /* Mesmo fundo de pontos da foto: placeholder intencional até chegar o print */
+  .visual-vazio {
+    background-color: var(--accent-soft);
+    background-image: radial-gradient(color-mix(in oklch, var(--accent-ink) 35%, transparent) 1.3px, transparent 1.5px);
+    background-size: 16px 16px;
+  }
+</style>

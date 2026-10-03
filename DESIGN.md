@@ -33,12 +33,15 @@ Regra: azul claro nunca é cor de texto sobre fundo claro; usar `--accent-ink`.
 - Container `max-w-6xl`, gutter 20px (mobile) / 32px (md+).
 - Hero: 1 coluna (foto acima, alinhada à esquerda) até 1023px; 2 colunas a partir de `lg` (1024).
 - Fluxo: vertical até 1023px; horizontal (3 nós + fios) a partir de `lg`.
-- Experiência: período acima do cargo no mobile; coluna de período (11rem) a partir de `md`.
+- Experiência: sem datas; empresa (cor `--accent-ink`) acima do cargo no mobile, em coluna de 11rem a partir de `md`.
 
 ## Componentes
 - Botões em pílula: primário = fundo `--accent`; secundário = borda `--line`, hover borda `--ink`.
 - Chips de conhecimento: pílula com borda `--line`.
-- Foto: cantos 1.75rem + bloco azul claro deslocado/rotacionado atrás.
+- Foto: cantos 1.75rem sobre um fundo de pontos (grade de 18px, tom `--accent-ink`, some nas bordas), como a tela do n8n. Substituiu o bloco azul inclinado, que parecia um cartão clicável.
+- Faixa de ferramentas: 6 miniaturas (Excel, Power BI, Dashboards, n8n, Sites, Claude) abaixo do hero; 3 colunas no mobile, 6 a partir de `sm`. Logos em cor de marca (n8n/Claude via simple-icons; Excel/Power BI simplificados em `src/data/logos.ts`).
+- Projetos: linhas com imagem 16:10 à esquerda e texto à direita (empilha no mobile); sem print, painel `--accent-soft` com fundo de pontos e ícone do projeto.
+- Hero no mobile: botão de e-mail em largura total; LinkedIn e GitHub na linha de baixo.
 - Ícones: SVG de traço único 1.75 (estilo Lucide) em `src/components/Icon.astro`.
 
 ## Movimento
