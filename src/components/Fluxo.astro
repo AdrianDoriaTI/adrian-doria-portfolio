@@ -1,0 +1,208 @@
+---
+import Icon from './Icon.astro';
+import { fluxo } from '../data/perfil';
+---
+<section id="conhecimentos" class="border-t border-line bg-surface">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+    <div class="max-w-2xl">
+      <h2 class="text-[clamp(2rem,5vw,3.25rem)] font-semibold">Do negócio à automação</h2>
+      <p class="mt-4 text-muted">
+        Entendo o processo, meço com dados e automatizo com IA, como um fluxo em que cada etapa alimenta a próxima.
+      </p>
+    </div>
+
+    <div class="flow mt-12 md:mt-16" data-flow>
+      {fluxo.map((no, i) => (
+        <>
+          {i > 0 && (
+            <div class="wire" aria-hidden="true" style={`--i:${i}`}>
+              <span class="wire-fill"></span>
+              <span class="pulse"></span>
+            </div>
+          )}
+          <article class:list={['node', { 'node--destaque': no.id === 'automacao' }]} style={`--i:${i}`}>
+            <span class="port port-in" aria-hidden="true"></span>
+            <span class="port port-out" aria-hidden="true"></span>
+            <span class="status" aria-hidden="true"><Icon name="check" size={14} /></span>
+
+            <div class="flex items-center gap-3">
+              <span class="node-icon grid size-11 shrink-0 place-items-center rounded-xl">
+                <Icon name={no.icone} size={22} />
+              </span>
+              <div>
+                <h3 class="text-xl font-semibold">{no.titulo}</h3>
+                <p class="text-sm text-muted">{no.sub}</p>
+              </div>
+            </div>
+
+            <ul class="mt-5 flex flex-wrap gap-2" aria-label={`Conhecimentos em ${no.titulo}`}>
+              {no.itens.map((item) => (
+                <li class="chip">{item}</li>
+              ))}
+            </ul>
+          </article>
+        </>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .flow {
+    display: grid;
+    grid-template-columns: minmax(0, 36rem);
+    justify-content: center;
+  }
+  @media (min-width: 1024px) {
+    .flow {
+      grid-template-columns: 1fr 4rem 1fr 4rem 1fr;
+      align-items: stretch;
+    }
+  }
+
+  /* Nó */
+  .node {
+    position: relative;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: var(--paper);
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+  }
+  .node:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .node-icon { background: var(--accent-soft); color: var(--accent-ink); }
+  .node--destaque { border-color: var(--accent); }
+  .node--destaque .node-icon { background: var(--accent); color: var(--on-accent); }
+
+  .chip {
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    background: var(--surface);
+  }
+  .node--destaque .chip { border-color: color-mix(in oklch, var(--accent) 55%, var(--line)); }
+
+  /* Portas de entrada/saída: em cima/embaixo no mobile, nas laterais no desktop */
+  .port {
+    position: absolute;
+    left: 50%;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    translate: -50% 0;
+  }
+  .port-in { top: -0.4rem; }
+  .port-out { bottom: -0.4rem; }
+  .node:first-of-type .port-in,
+  .node:last-of-type .port-out { display: none; }
+  @media (min-width: 1024px) {
+    .port { left: auto; top: 50%; translate: 0 -50%; }
+    .port-in { left: -0.4rem; }
+    .port-out { right: -0.4rem; bottom: auto; }
+  }
+
+  /* Selo de "executado" */
+  .status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--on-accent);
+    transition: opacity 0.4s ease, scale 0.5s var(--ease-out-expo);
+  }
+
+  /* Fio entre os nós */
+  .wire {
+    position: relative;
+    height: 3rem;
+    width: 2px;
+    margin-inline: auto;
+    background: var(--line);
+    overflow: visible;
+  }
+  @media (min-width: 1024px) {
+    .wire { height: 2px; width: 100%; align-self: center; }
+  }
+  .wire-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform-origin: top;
+    transition: transform 0.6s var(--ease-out-expo);
+  }
+  @media (min-width: 1024px) {
+    .wire-fill { transform-origin: left; }
+  }
+  .pulse {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: -0.25rem 0 0 -0.25rem;
+    border-radius: 999px;
+    background: var(--accent-ink);
+    box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 35%, transparent);
+    opacity: 0;
+  }
+  @media (min-width: 1024px) {
+    .pulse { left: 0; top: 50%; }
+  }
+
+  /* Execução (só com JS): estado inicial "parado", dispara ao entrar na tela */
+  :global(.js) .flow:not(.is-running) .status { opacity: 0; scale: 0.4; }
+  :global(.js) .flow:not(.is-running) .wire-fill { transform: scaleY(0); }
+  @media (min-width: 1024px) {
+    :global(.js) .flow:not(.is-running) .wire-fill { transform: scaleX(0); }
+  }
+  .flow.is-running .status { transition-delay: calc(var(--i) * 0.7s + 0.15s); }
+  .flow.is-running .wire-fill { transition-delay: calc(var(--i) * 0.7s - 0.35s); }
+  .flow.is-running .pulse {
+    animation: pulse-y 2.6s var(--ease-out-expo) infinite;
+    animation-delay: calc(var(--i) * 0.7s + 1.6s);
+  }
+  @media (min-width: 1024px) {
+    .flow.is-running .pulse { animation-name: pulse-x; }
+  }
+  @keyframes pulse-y {
+    0% { top: 0; opacity: 0; }
+    15% { opacity: 1; }
+    70% { top: 100%; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+  @keyframes pulse-x {
+    0% { left: 0; opacity: 0; }
+    15% { opacity: 1; }
+    70% { left: 100%; opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flow.is-running .pulse { animation: none; }
+    .node:hover { transform: none; }
+  }
+</style>
+
+<script>
+  const flow = document.querySelector('[data-flow]');
+  if (flow) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          flow.classList.add('is-running');
+          io.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    io.observe(flow);
+  }
+</script>

@@ -1,0 +1,54 @@
+---
+import Icon from './Icon.astro';
+import { perfil } from '../data/perfil';
+
+const canais = [
+  { href: perfil.linkedin, icone: 'linkedin', label: 'LinkedIn', externo: true },
+  { href: perfil.github, icone: 'github', label: 'GitHub', externo: true },
+] as const;
+---
+<section id="contato" class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-32">
+  <h2 class="text-[clamp(2.25rem,6vw,4.5rem)] font-semibold">Vamos conversar?</h2>
+  <p class="mt-4 max-w-xl text-muted">Aberto a oportunidades em administrativo, financeiro e automação.</p>
+
+  <a
+    href={`mailto:${perfil.email}`}
+    class="email group mt-10 inline-flex max-w-full items-center gap-3 font-display text-[clamp(1.125rem,4.2vw,2.5rem)] font-medium tracking-tight"
+  >
+    <span class="truncate">{perfil.email}</span>
+    <Icon name="arrow" size={28} class="shrink-0 text-accent-ink transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+  </a>
+
+  <ul class="mt-8 flex flex-wrap gap-3">
+    {canais.map((c) => (
+      <li>
+        <a
+          href={c.href}
+          target={c.externo ? '_blank' : undefined}
+          rel={c.externo ? 'noopener' : undefined}
+          class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-3 font-medium transition-colors hover:border-ink"
+        >
+          <Icon name={c.icone} size={18} /> {c.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<footer class="border-t border-line">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-5 py-6 text-sm text-muted md:px-8">
+    <p>© {new Date().getFullYear()} {perfil.nome}</p>
+    <a href="#topo" class="hover:text-ink">Voltar ao topo</a>
+  </div>
+</footer>
+
+<style>
+  .email {
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 0.12em;
+    background-position: 0 92%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-out-expo);
+  }
+  .email:hover { background-size: calc(100% - 2.5em) 0.12em; }
+</style>

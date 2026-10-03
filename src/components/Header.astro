@@ -1,0 +1,74 @@
+---
+import Icon from './Icon.astro';
+
+const links = [
+  { href: '#conhecimentos', label: 'Conhecimentos' },
+  { href: '#experiencia', label: 'Experiência' },
+  { href: '#projetos', label: 'Projetos' },
+];
+---
+<header class="site-header sticky top-0 z-40 bg-paper/85 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:px-8">
+    <a href="#topo" class="font-display text-lg font-semibold tracking-tight">
+      Adrian Doria<span class="text-accent-ink">.</span>
+    </a>
+
+    <nav aria-label="Seções" class="hidden md:block">
+      <ul class="flex items-center gap-8 text-[0.9375rem] text-muted">
+        {links.map((l) => (
+          <li><a href={l.href} class="transition-colors hover:text-ink">{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        data-theme-toggle
+        aria-label="Ativar tema escuro"
+        class="grid size-10 place-items-center rounded-full text-muted transition-colors hover:bg-accent-soft hover:text-ink"
+      >
+        <Icon name="moon" class="theme-icon-moon" />
+        <Icon name="sun" class="theme-icon-sun" />
+      </button>
+      <a
+        href="#contato"
+        class="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform duration-200 hover:-translate-y-px active:translate-y-0"
+      >Contato</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  .site-header.is-scrolled { border-bottom-color: var(--line); }
+  /* O SVG vem do componente Icon (fora do escopo deste estilo) */
+  :global(.theme-icon-sun) { display: none; }
+  :global([data-theme='dark'] .theme-icon-sun) { display: block; }
+  :global([data-theme='dark'] .theme-icon-moon) { display: none; }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.querySelector<HTMLButtonElement>('[data-theme-toggle]')!;
+
+  const sync = () => {
+    const dark = root.dataset.theme === 'dark';
+    btn.setAttribute('aria-label', dark ? 'Ativar tema claro' : 'Ativar tema escuro');
+  };
+  sync();
+
+  btn.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+    sync();
+  });
+
+  const header = document.querySelector('.site-header')!;
+  const onScroll = () => header.classList.toggle('is-scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>

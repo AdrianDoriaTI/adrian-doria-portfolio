@@ -3,30 +3,31 @@
 Atualizado em 2026-10-03. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
 
 ## Onde estamos
-Etapa 2 (Produto) **concluída e aprovada**. Próxima: **5 — Referências**.
+**v0 do site implementada** (página única, tema claro/escuro). Aguardando o usuário ver e propor melhorias. A v0 pulou referências e direção formal (D6); `DESIGN.md` documenta a v0, ainda não aprovada como final.
 
 ## Pronto
-- Estrutura do projeto, stack `astro`, git + GitHub (privado).
-- Briefing em `docs/briefing.md`.
-- `PRODUCT.md` aprovado (schema Impeccable): perfil híbrido ADM + Automação; contato por e-mail, LinkedIn e GitHub (sem WhatsApp); com foto; sem CV em PDF por enquanto.
-- Skill Impeccable instalada globalmente (`~/.claude/skills/impeccable`, sem hooks); `impeccable context` lê o `PRODUCT.md`.
+- `PRODUCT.md` aprovado. Impeccable instalado globalmente.
+- Página única: header, hero com foto, fluxo de conhecimentos (estilo n8n), experiência/formação/certificações, projetos (placeholder), contato. Conteúdo em `src/data/perfil.ts`, vindo do currículo (D5).
+- `DESIGN.md` v0 (tokens, tipografia, breakpoints, movimento).
 
 ## Testado
-- Nada ainda.
+- Build de produção ok.
+- Screenshots próprios (Chrome headless) em 375 / 768 / 1440, claro e escuro: sem overflow; corrigidos ícone de tema duplicado, botões do hero quebrando, hero apertado em 768.
+- Não validado ainda: navegação por teclado, contraste medido, animação do fluxo em celular real.
 
 ## Falta (próximos passos, em ordem)
-1. Referências: `/sf:design-ref` → `docs/referencias-visuais.md` (decidir aqui tema claro × escuro).
-2. Direção visual: `sf:designer` (modo direção) → `DESIGN.md` → aprovação do usuário.
-3. Arquitetura de páginas/seções em `docs/arquitetura.md`.
-4. Implementação mobile-first → `/sf:validar` → `/sf:revisar` → `/sf:finalizar`.
+1. Usuário revisa a v0 (`npm run dev` → http://localhost:4321) e lista melhorias.
+2. Aplicar melhorias; opcional: `/sf:design-ref` se quiser explorar outra direção.
+3. `/sf:validar` → `/sf:revisar` → aprovação do `DESIGN.md`.
+4. Hospedagem/deploy → `/sf:finalizar`.
 
 ## Decisões pendentes do usuário
-- Enviar conteúdo: sobre mim, experiências, formação, projetos (links), e-mail, URL do LinkedIn, foto. (Não bloqueia o design.)
-- Tema: branco + azul claro × preto + azul claro (ou ambos).
+- Melhorias na v0.
+- Conteúdo: projetos (com links), ajustes de textos/experiências.
 - Hospedagem/deploy e domínio.
 
 ## Última validação
-- Nenhuma.
+- 2026-10-03: screenshots próprios (sem `sf:qa`).
 
 ## Problemas conhecidos
-- Nenhum.
+- Seção Projetos é `[PLACEHOLDER]`.

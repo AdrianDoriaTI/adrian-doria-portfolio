@@ -1,17 +1,22 @@
 ---
-
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Fluxo from '../components/Fluxo.astro';
+import Experiencia from '../components/Experiencia.astro';
+import Projetos from '../components/Projetos.astro';
+import Contato from '../components/Contato.astro';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title="Adrian Doria · Administrativo, Financeiro e Automação"
+  description="Analista administrativo e financeiro com Excel, Power BI e automação com n8n, agentes de IA e Claude."
+>
+  <Header />
+  <main id="conteudo">
+    <Hero />
+    <Fluxo />
+    <Experiencia />
+    <Projetos />
+    <Contato />
+  </main>
+</Base>
