@@ -18,7 +18,7 @@ Site (página única, tema claro/escuro) implementado e com **1 rodada de melhor
 - Não validado: navegação por teclado, contraste medido, animação do fluxo em celular real.
 
 ## Falta (próximos passos, em ordem)
-1. **Deploy na Vercel:** usuário criou conta (Google + GitHub conectado) e foi orientado a importar o repo em vercel.com/new sem mudar configurações. Confirmar se concluiu → registrar a URL aqui e em `docs/arquitetura.md` (Hospedagem). Cada push na `main` publica sozinho.
+1. **Deploy na Vercel:** concluído pelo usuário em 2026-10-03. Falta a **URL** → registrar aqui e em `docs/arquitetura.md` (Hospedagem). Cada push na `main` publica sozinho.
 2. Prints do Agent Control e da SiteFactory (sem dados de clientes) → `src/assets/projetos/` + campo `imagem` em `projetos` (`perfil.ts`) e mapa `imagens` em `Projetos.astro`.
 3. Novas melhorias do usuário.
 4. `/sf:validar` → `/sf:revisar` → aprovação do `DESIGN.md` → `/sf:finalizar`.
