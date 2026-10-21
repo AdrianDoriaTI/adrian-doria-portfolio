@@ -5,9 +5,11 @@
   <img src="img/banner-light.svg" alt="Adrian Doria. Entendo o negócio. Automatizo o trabalho." width="100%">
 </picture>
 
-Sou analista administrativo e financeiro, com mais de 4 anos em compras, notas fiscais, controle orçamentário, Capex e Opex e SAP. Nesse dia a dia percebi quanto tempo vai embora em tarefas repetitivas, então me formei em Análise e Desenvolvimento de Sistemas e passei a estudar automação de processos e IA.
+Sou analista administrativo e financeiro, com mais de 4 anos (Randstad, Stefanini e Cencosud) em compras, notas fiscais, controle orçamentário, Capex e Opex e SAP. Nesse dia a dia percebi quanto tempo vai embora em tarefas repetitivas, então me formei em Análise e Desenvolvimento de Sistemas e passei a estudar automação de processos e IA.
 
-Hoje eu construo com essas ferramentas. Os projetos estão logo abaixo, e você pode ver cada um funcionando.
+Agora me dedico a isso em tempo integral: estudo desenvolvimento com IA todos os dias e construo projetos reais. Alguns já estão no ar, outros em andamento.
+
+🟢 **Disponível para novas oportunidades.**
 
 **[Portfólio](https://adrian-doria-portfolio.vercel.app)** · **[LinkedIn](https://www.linkedin.com/in/adriandoria454)** · **[E-mail](mailto:adrian.doria454@outlook.com)**
 
@@ -49,4 +51,6 @@ E o próprio **[portfólio](https://github.com/AdrianDoriaTI/adrian-doria-portfo
 
 ## Agora
 
-Estudando automação de processos e IA aplicada a finanças. Procuro uma vaga em que eu una o administrativo e financeiro com automação.
+- Estudando desenvolvimento com IA (Claude Code), automação de processos e agentes
+- Em andamento: **Revela**, gerador de imagens com IA que roda no próprio computador
+- Procuro uma vaga em que eu una o administrativo e financeiro com automação e IA

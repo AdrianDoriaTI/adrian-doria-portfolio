@@ -6,20 +6,21 @@ export const perfil = {
   cargo: 'Analista Administrativo e Financeiro',
   frase: ['Entendo o negócio.', 'Automatizo o trabalho.'],
   resumo:
-    'Analista administrativo e financeiro com mais de 4 anos de experiência, hoje construindo automações e sistemas com dados e IA.',
+    'Analista administrativo e financeiro com mais de 4 anos de experiência. Agora me dedico a construir automações e sistemas com IA, e estou disponível para novas oportunidades.',
   local: 'Nossa Senhora do Socorro, SE',
   email: 'adrian.doria454@outlook.com',
   linkedin: 'https://www.linkedin.com/in/adriandoria454',
   github: 'https://github.com/AdrianDoriaTI',
+  disponivel: 'Disponível para novas oportunidades',
 };
 
 // "Sobre": três tempos (o que eu sei, a virada, a prova). O último leva aos projetos.
 export const sobre = {
   titulo: 'Do financeiro ao código',
   paragrafos: [
-    'Comecei pela rotina: compras, notas fiscais, controle orçamentário, Capex e Opex, provisões no SAP. Passei pela Randstad e pela Stefanini e hoje estou na Cencosud, transformando números em relatórios e dashboards no Power BI.',
+    'Comecei pela rotina: compras, notas fiscais, controle orçamentário, Capex e Opex, provisões no SAP. Passei pela Randstad, pela Stefanini e pela Cencosud, onde transformava números em relatórios e dashboards no Power BI.',
     'Foi nesse dia a dia que percebi quanto tempo vai embora em tarefas repetitivas. Por isso me formei em Análise e Desenvolvimento de Sistemas e passei a estudar automação de processos e IA.',
-    'Hoje eu não só uso essas ferramentas: construo com elas. Já tenho projetos funcionando, e você pode ver cada um logo abaixo.',
+    'Agora me dedico a isso em tempo integral: estudo desenvolvimento com IA todos os dias e construo projetos reais. Alguns já estão no ar, outros em andamento, e você pode ver cada um logo abaixo.',
   ],
   numeros: [
     { valor: 4, sufixo: '+', rotulo: 'anos em administrativo e financeiro' },
