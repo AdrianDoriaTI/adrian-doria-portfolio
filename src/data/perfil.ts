@@ -6,11 +6,26 @@ export const perfil = {
   cargo: 'Analista Administrativo e Financeiro',
   frase: ['Entendo o negócio.', 'Automatizo o trabalho.'],
   resumo:
-    'Mais de 4 anos em rotinas administrativas, financeiras e de controle orçamentário em uma empresa de grande porte. Hoje aprofundo automação de processos e IA aplicada à produtividade.',
+    'Analista administrativo e financeiro com mais de 4 anos de experiência, hoje construindo automações e sistemas com dados e IA.',
   local: 'Nossa Senhora do Socorro, SE',
   email: 'adrian.doria454@outlook.com',
   linkedin: 'https://www.linkedin.com/in/adriandoria454',
   github: 'https://github.com/AdrianDoriaTI',
+};
+
+// "Sobre": três tempos (o que eu sei, a virada, a prova). O último leva aos projetos.
+export const sobre = {
+  titulo: 'Do financeiro ao código',
+  paragrafos: [
+    'Comecei pela rotina: compras, notas fiscais, controle orçamentário, Capex e Opex, provisões no SAP. Passei pela Randstad e pela Stefanini e hoje estou na Cencosud, transformando números em relatórios e dashboards no Power BI.',
+    'Foi nesse dia a dia que percebi quanto tempo vai embora em tarefas repetitivas. Por isso me formei em Análise e Desenvolvimento de Sistemas e passei a estudar automação de processos e IA.',
+    'Hoje eu não só uso essas ferramentas: construo com elas. Já tenho projetos funcionando, e você pode ver cada um logo abaixo.',
+  ],
+  numeros: [
+    { valor: 4, sufixo: '+', rotulo: 'anos em administrativo e financeiro' },
+    { valor: 3, sufixo: '', rotulo: 'empresas de grande porte' },
+    { valor: 2, sufixo: '', rotulo: 'projetos no ar para você testar' },
+  ],
 };
 
 export const fluxoIntro =
@@ -80,35 +95,47 @@ export const certificacoes = {
   itens: ['Dashboard com Power BI', 'Dashboards Financeiros', 'Análise Financeira Eficiente', 'SQLite Online: instruções SQL'],
 };
 
-// Projetos. Repositórios privados: sem link para o código.
+// Projetos. links.demo = ver funcionando; links.codigo = repositório público.
 export const projetos = [
   {
-    nome: 'Agent Control',
-    icone: 'bot',
-    frase: 'Agentes de IA que atendem pelo WhatsApp e cuidam de agendamentos.',
+    nome: 'Agenda Web Pro',
+    icone: 'calendar',
+    frase: 'Agenda online para barbearias, do horário marcado ao financeiro do dia.',
     detalhe:
-      'O n8n orquestra as conversas, o PostgreSQL guarda a agenda e as regras de negócio, e o modelo de IA conversa com o cliente e transcreve áudios.',
-    tags: ['n8n', 'PostgreSQL', 'Evolution API', 'Gemini', 'WhatsApp'],
-    status: 'Em produção',
-    imagem: null, // [PLACEHOLDER] print do painel ou do fluxo n8n (sem dados de clientes)
+      'Página do cliente, painel do barbeiro, equipe e comissão por profissional. A disponibilidade é calculada pelo banco de dados, então nunca há horário duplicado.',
+    tags: ['PostgreSQL', 'JavaScript', 'n8n', 'Regras de negócio'],
+    status: 'No ar',
+    imagem: 'agenda',
+    links: {
+      demo: 'https://www.agendawebpro.com.br/site/barbearias/',
+      codigo: 'https://github.com/AdrianDoriaTI/agenda-web-pro',
+    },
   },
   {
-    nome: 'SiteFactory',
-    icone: 'layers',
-    frase: 'Uma fábrica de sites com Claude Code, do briefing ao site publicado.',
+    nome: 'Site Agenda Web Pro',
+    icone: 'globe',
+    frase: 'A vitrine do produto, com o sistema funcionando dentro da página.',
     detalhe:
-      'Plugin com agentes especialistas (design, QA, referências visuais), um roteiro de etapas e a documentação como memória de cada projeto.',
-    tags: ['Claude Code', 'Agentes de IA', 'Python', 'Astro'],
-    status: 'Em uso',
-    imagem: null, // [PLACEHOLDER] print ou diagrama do fluxo
+      'Demonstração interativa com dados fictícios, tema claro e escuro e cabeçalhos de segurança. Feito em Astro e publicado na Cloudflare.',
+    tags: ['Astro', 'TypeScript', 'Tailwind CSS', 'Cloudflare'],
+    status: 'No ar',
+    imagem: 'agendaSite',
+    links: {
+      demo: 'https://www.agendawebpro.com.br/site/barbearias/',
+      codigo: 'https://github.com/AdrianDoriaTI/agenda-web-pro-site',
+    },
   },
   {
     nome: 'Este portfólio',
-    icone: 'globe',
-    frase: 'O primeiro site criado com a SiteFactory.',
-    detalhe: 'Astro e Tailwind, tema claro e escuro, e a seção de conhecimentos animada como um fluxo do n8n.',
+    icone: 'layers',
+    frase: 'Feito por mim, do design ao código.',
+    detalhe: 'Astro e Tailwind, tema claro e escuro, animações leves e a seção de conhecimentos funcionando como um fluxo do n8n.',
     tags: ['Astro', 'Tailwind CSS', 'TypeScript', 'Claude Code'],
     status: 'Você está aqui',
     imagem: 'portfolio',
+    links: {
+      demo: null,
+      codigo: 'https://github.com/AdrianDoriaTI/adrian-doria-portfolio',
+    },
   },
 ];

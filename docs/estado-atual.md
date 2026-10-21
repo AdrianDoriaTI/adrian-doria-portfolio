@@ -1,38 +1,33 @@
 # Estado atual — Adrian Doria — Portfólio
 
-Atualizado em 2026-10-03. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
+Atualizado em 2026-10-21. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
 
 ## Onde estamos
-Site (página única, tema claro/escuro) implementado e com **1 rodada de melhorias** aplicada. Aguardando: deploy na Vercel, prints dos projetos e novas melhorias do usuário. A v0 pulou referências e direção formal (D6); `DESIGN.md` documenta o que existe, ainda não aprovado como final.
+Rodada 2 publicada: copy nova (narrativa ADM/Finanças → automação → projetos), seção **Sobre** com números, movimento leve (D11) e projetos com prints reais e links (Agenda Web Pro e o site dele). O GitHub virou vitrine (D12): README de perfil com banner animado e 2 repositórios públicos novos.
+
+URL: https://adrian-doria-portfolio.vercel.app (cada push na `main` publica).
 
 ## Pronto
-- `PRODUCT.md` aprovado. Impeccable instalado globalmente (`~/.claude/skills/impeccable`).
-- Seções: header, hero com foto (fundo de pontos), faixa de ferramentas (Excel, Power BI, Dashboards, n8n, Sites, Claude), fluxo de conhecimentos estilo n8n, experiência (sem datas) + formação + certificações, projetos (Agent Control, SiteFactory, portfólio), contato.
-- Conteúdo todo em `src/data/perfil.ts` (do currículo, D5; projetos dos READMEs, D8). Logos em `src/data/logos.ts`.
-- `DESIGN.md` atualizado com a rodada 1.
+- Seções: header, hero (frase palavra por palavra, paralaxe nos pontos da foto), ferramentas, **Sobre** (3 parágrafos que acendem ao rolar + contadores), fluxo n8n, experiência, projetos (paralaxe na tela, inclinação no mouse, Ver ao vivo / Código), contato.
+- Movimento em `src/scripts/motion.ts` (`data-reveal`, `data-count`, `data-parallax`, `data-tilt`).
+- `github/perfil/`: README do perfil (`AdrianDoriaTI/AdrianDoriaTI`), `gerar-banner.py` e imagens. Ao mudar texto ou print, atualizar lá e enviar ao repositório do perfil.
+- Repositórios públicos: `AdrianDoriaTI` (perfil), `agenda-web-pro` (vitrine, sem código), `agenda-web-pro-site` (cópia limpa do site, sem histórico, WhatsApp de exemplo), `adrian-doria-portfolio`.
 
 ## Testado
-- Build de produção ok.
-- Screenshots próprios em 375 / 768 / 1440, claro e escuro: sem overflow.
-  - Como capturar: Chrome headless (`--blink-settings=preferredColorScheme=1` = claro). Abaixo de 500px o Chrome headless não reduz a janela: usar um HTML com `<iframe>` de 375px (deslocar com `margin-top` negativo para ver outras partes).
-- Não validado: navegação por teclado, contraste medido, animação do fluxo em celular real.
+- Build ok. Screenshots 1440 (claro) e 375 (escuro): sem overflow.
+- gitleaks: nada encontrado no portfólio (incluindo histórico), no perfil e nos dois repositórios novos.
 
-## Falta (próximos passos, em ordem)
-1. **Deploy na Vercel:** concluído pelo usuário em 2026-10-03. Falta a **URL** → registrar aqui e em `docs/arquitetura.md` (Hospedagem). Cada push na `main` publica sozinho.
-2. Prints do Agent Control e da SiteFactory (sem dados de clientes) → `src/assets/projetos/` + campo `imagem` em `projetos` (`perfil.ts`) e mapa `imagens` em `Projetos.astro`.
-3. Novas melhorias do usuário.
-4. `/sf:validar` → `/sf:revisar` → aprovação do `DESIGN.md` → `/sf:finalizar`.
+## Falta (próximos passos)
+1. Revela (gerador de imagens com IA local) como 3º projeto: checklist de segurança → decidir código aberto ou vitrine; GIF/vídeo curto.
+2. Projeto que prove o lado ADM/Financeiro (dashboard Capex/Opex com dados fictícios ou fluxo n8n exportável).
+3. Versão em inglês do README de perfil (opcional).
+4. `/sf:validar` → `/sf:revisar` → aprovar `DESIGN.md`.
 
 ## Decisões pendentes do usuário
-- Resumo: manter "em uma empresa de grande porte" ou só "em uma empresa"?
-- Formação: manter o ano (2023–2025) já que as experiências ficaram sem datas?
-- Tornar público o repositório do portfólio (para recrutador ver o código)? Agent Control deve seguir privado.
-- Vídeo curto (30–60 s) do agente no WhatsApp para o projeto Agent Control (opcional).
+- Ajustes de texto da rodada 2 (a copy é sugestão inicial).
+- Ligar 2FA no GitHub.
 - Domínio próprio (opcional).
 
-## Última validação
-- 2026-10-03: screenshots próprios (sem `sf:qa`).
-
 ## Problemas conhecidos
-- Agent Control e SiteFactory sem print (painel com ícone no lugar).
-- O print do portfólio em `src/assets/projetos/portfolio.png` precisa ser refeito quando o hero mudar.
+- O print do portfólio (`src/assets/projetos/portfolio.png`) precisa ser refeito quando o hero mudar.
+- `agenda-web-pro-site` é uma cópia: mudanças no site real não vão sozinhas para lá.

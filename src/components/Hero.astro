@@ -9,22 +9,34 @@ import { perfil } from '../data/perfil';
     <h1 class="text-[clamp(3rem,9vw,5.75rem)] font-semibold">{perfil.nome}</h1>
 
     <p class="mt-5 font-display text-[clamp(1.5rem,3.4vw,2.25rem)] leading-tight font-medium tracking-tight text-muted">
-      {perfil.frase[0]}<br />
-      <span class="text-ink">{perfil.frase[1]}</span>
+      {perfil.frase.map((linha, l) => (
+        <span class:list={['block', { 'text-ink': l === 1 }]}>
+          {linha.split(' ').map((w, i) => (
+            <><span class="word" style={`--d:${l * 3 + i}`}>{w}</span>{' '}</>
+          ))}
+        </span>
+      ))}
     </p>
 
-    <p class="mt-6 max-w-[52ch] text-muted">{perfil.resumo}</p>
+    <p class="rise mt-6 max-w-[52ch] text-muted" style="--d:6">{perfil.resumo}</p>
 
     <p class="mt-4 flex items-center gap-1.5 text-sm text-muted">
       <Icon name="pin" size={16} /> {perfil.local}
     </p>
 
-    <div class="mt-8 flex flex-wrap items-center gap-2 sm:gap-3">
+    <div class="rise mt-8 flex flex-wrap items-center gap-2 sm:gap-3" style="--d:7">
       <a
-        href={`mailto:${perfil.email}`}
+        href="#projetos"
         class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 sm:w-auto sm:px-5 font-medium text-on-accent shadow-[var(--shadow)] transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
       >
-        <Icon name="mail" size={18} /> Enviar e-mail
+        <Icon name="play" size={18} /> Ver projetos
+      </a>
+      <a
+        href={`mailto:${perfil.email}`}
+        aria-label="Enviar e-mail"
+        class="grid size-12 place-items-center rounded-full border border-line transition-colors hover:border-ink"
+      >
+        <Icon name="mail" size={18} />
       </a>
       <a
         href={perfil.linkedin}
@@ -48,6 +60,7 @@ import { perfil } from '../data/perfil';
 
   <div class="order-1 lg:order-2">
     <div class="portrait relative w-[min(68%,18rem)] md:w-[20rem] lg:w-full lg:max-w-[26rem]">
+      <div class="dots" data-parallax="0.12" aria-hidden="true"></div>
       <Image
         src={foto}
         alt="Foto de Adrian Doria"
@@ -63,9 +76,9 @@ import { perfil } from '../data/perfil';
 
 <style>
   /* Fundo de pontos, como a tela do n8n: textura que some nas bordas, sem cara de cartão */
-  .portrait::before {
-    content: '';
+  .dots {
     position: absolute;
+    translate: 0 var(--py, 0px);
     inset: -2rem -3.5rem -3.5rem -2rem;
     background-image: radial-gradient(color-mix(in oklch, var(--accent-ink) 55%, transparent) 1.4px, transparent 1.6px);
     background-size: 18px 18px;
@@ -73,4 +86,15 @@ import { perfil } from '../data/perfil';
     -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent);
     pointer-events: none;
   }
+
+  /* Entrada única: a frase aparece palavra por palavra; o resto vem logo depois */
+  .word { display: inline-block; }
+  :global(.js) .word,
+  :global(.js) .rise {
+    animation: subir 0.9s var(--ease-out-expo) both;
+    animation-delay: calc(var(--d, 0) * 90ms + 150ms);
+  }
+  :global(.js) .portrait { animation: surgir 1.2s var(--ease-out-expo) both; }
+  @keyframes subir { from { opacity: 0; transform: translateY(0.6em); } }
+  @keyframes surgir { from { opacity: 0; transform: scale(0.96); } }
 </style>

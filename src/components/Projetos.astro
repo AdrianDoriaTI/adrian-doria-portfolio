@@ -3,15 +3,17 @@ import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import { perfil, projetos } from '../data/perfil';
 import printPortfolio from '../assets/projetos/portfolio.png';
+import printAgenda from '../assets/projetos/agenda.png';
+import printAgendaSite from '../assets/projetos/agenda-site.png';
 
-const imagens = { portfolio: printPortfolio } as const;
+const imagens = { portfolio: printPortfolio, agenda: printAgenda, agendaSite: printAgendaSite } as const;
 ---
 <section id="projetos" class="border-t border-line bg-surface">
   <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
     <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
       <div class="max-w-xl">
-        <h2 class="text-[clamp(2rem,5vw,3.25rem)] font-semibold">Projetos</h2>
-        <p class="mt-4 text-muted">O que venho construindo com automação, IA e sites.</p>
+        <h2 class="text-[clamp(2rem,5vw,3.25rem)] font-semibold">O que eu já construí</h2>
+        <p class="mt-4 text-muted">Projetos reais, no ar. Abra, teste e veja o código.</p>
       </div>
       <a
         href={perfil.github}
@@ -24,31 +26,34 @@ const imagens = { portfolio: printPortfolio } as const;
       </a>
     </div>
 
-    <div class="mt-12 flex flex-col gap-14 md:mt-16 md:gap-20">
-      {projetos.map((p) => (
-        <article class="grid items-center gap-6 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-12">
-          <div class="visual relative aspect-[16/10] overflow-hidden rounded-2xl border border-line">
-            {p.imagem ? (
-              <Image
-                src={imagens[p.imagem as keyof typeof imagens]}
-                alt={`Tela do projeto ${p.nome}`}
-                widths={[480, 800, 1200]}
-                sizes="(min-width: 768px) 30rem, 100vw"
-                class="size-full object-cover object-top"
-              />
-            ) : (
-              <div class="visual-vazio grid size-full place-items-center">
-                <span class="relative grid size-20 place-items-center rounded-2xl bg-accent text-on-accent shadow-[var(--shadow)]">
-                  <Icon name={p.icone} size={36} />
-                </span>
-              </div>
-            )}
-          </div>
+    <div class="mt-12 flex flex-col gap-16 md:mt-16 md:gap-24">
+      {projetos.map((p, i) => (
+        <article class:list={['projeto grid items-center gap-6 md:gap-12', i % 2 ? 'md:grid-cols-[minmax(0,6fr)_minmax(0,5fr)]' : 'md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]']} data-reveal>
+          <a
+            href={p.links.demo ?? p.links.codigo}
+            target="_blank"
+            rel="noopener"
+            aria-label={`Abrir ${p.nome}`}
+            class:list={['moldura block', { 'md:order-2': i % 2 }]}
+            data-tilt
+          >
+            <span class="visual relative block aspect-[16/10] overflow-hidden rounded-2xl border border-line">
+              <span class="tela block size-full" data-parallax="0.06">
+                <Image
+                  src={imagens[p.imagem as keyof typeof imagens]}
+                  alt={`Tela do projeto ${p.nome}`}
+                  widths={[480, 800, 1200, 1600]}
+                  sizes="(min-width: 768px) 34rem, 100vw"
+                  class="size-full object-cover object-top"
+                />
+              </span>
+            </span>
+          </a>
 
-          <div>
+          <div class:list={['min-w-0', { 'md:order-1': i % 2 }]}>
             <div class="flex flex-wrap items-center gap-3">
               <h3 class="text-2xl font-semibold md:text-3xl">{p.nome}</h3>
-              <span class="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent-ink">{p.status}</span>
+              <span class="status inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent-ink">{p.status}</span>
             </div>
             <p class="mt-3 text-lg font-medium">{p.frase}</p>
             <p class="mt-2 max-w-[60ch] text-muted">{p.detalhe}</p>
@@ -57,11 +62,16 @@ const imagens = { portfolio: printPortfolio } as const;
                 <li class="rounded-full border border-line px-3 py-1 text-sm">{t}</li>
               ))}
             </ul>
-            {p.imagem !== 'portfolio' && (
-              <p class="mt-5 flex items-center gap-1.5 text-sm text-muted">
-                <Icon name="lock" size={15} /> Repositório privado
-              </p>
-            )}
+            <div class="mt-6 flex flex-wrap gap-2">
+              {p.links.demo && (
+                <a href={p.links.demo} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform duration-200 hover:-translate-y-px">
+                  <Icon name="play" size={16} /> Ver ao vivo
+                </a>
+              )}
+              <a href={p.links.codigo} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-medium transition-colors hover:border-ink">
+                <Icon name="code" size={16} /> {p.links.demo ? 'Código e detalhes' : 'Ver o código'}
+              </a>
+            </div>
           </div>
         </article>
       ))}
@@ -70,11 +80,25 @@ const imagens = { portfolio: printPortfolio } as const;
 </section>
 
 <style>
-  .visual { background: var(--paper); }
-  /* Mesmo fundo de pontos da foto: placeholder intencional até chegar o print */
-  .visual-vazio {
-    background-color: var(--accent-soft);
-    background-image: radial-gradient(color-mix(in oklch, var(--accent-ink) 35%, transparent) 1.3px, transparent 1.5px);
-    background-size: 16px 16px;
+  .visual { background: var(--paper); box-shadow: var(--shadow); }
+  /* Paralaxe: a tela desliza um pouco dentro da moldura; a moldura inclina sob o mouse */
+  .tela { scale: 1.1; translate: 0 var(--py, 0px); transition: translate 0.15s linear; }
+  .moldura {
+    perspective: 1200px;
+    border-radius: 1rem;
+  }
+  .moldura .visual {
+    transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.5s var(--ease-out-expo), box-shadow 0.4s ease;
+  }
+  .moldura:hover .visual { box-shadow: 0 24px 48px -20px oklch(21% 0.03 250 / 0.35); }
+  .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  /* Entrada: o projeto sobe levemente ao chegar na tela */
+  :global(.js) .projeto { opacity: 0.001; translate: 0 2rem; transition: opacity 0.9s var(--ease-out-expo), translate 0.9s var(--ease-out-expo); }
+  :global(.js) .projeto.is-in { opacity: 1; translate: 0 0; }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.js) .projeto { opacity: 1; translate: none; }
+    .tela { scale: 1; }
   }
 </style>

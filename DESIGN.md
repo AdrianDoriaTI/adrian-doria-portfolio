@@ -45,7 +45,11 @@ Regra: azul claro nunca é cor de texto sobre fundo claro; usar `--accent-ink`.
 - Ícones: SVG de traço único 1.75 (estilo Lucide) em `src/components/Icon.astro`.
 
 ## Movimento
-- Momento único: ao entrar na tela, o fluxo "executa" — fios preenchem em sequência, selos aparecem, um pulso percorre os fios em loop.
+- Hero: a frase entra palavra por palavra (uma vez); resumo e botões logo depois; os pontos atrás da foto têm paralaxe leve.
+- Sobre: parágrafos "acendem" (de `--muted` para `--ink`) ao entrar na tela; contadores sobem até o valor uma vez.
+- Projetos: sobem ao entrar; a tela tem paralaxe dentro da moldura e a moldura inclina sob o mouse (só com mouse).
+- Fluxo: ao entrar na tela, o fluxo "executa" — fios preenchem em sequência, selos aparecem, um pulso percorre os fios em loop.
+- Paralaxe só a partir de 768px. Código em `src/scripts/motion.ts`.
 - Sem JS: tudo visível. `prefers-reduced-motion`: sem pulso nem transições.
 - Micro: hover leve em botões/nós; sublinhado animado no e-mail.
 
