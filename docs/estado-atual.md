@@ -23,10 +23,21 @@ URL: https://adrian-doria-portfolio.vercel.app (cada push na `main` publica).
 3. Versão em inglês do README de perfil (opcional).
 4. `/sf:validar` → `/sf:revisar` → aprovar `DESIGN.md`.
 
-## Decisões pendentes do usuário
-- Ajustes de texto da rodada 2 (a copy é sugestão inicial).
+## Situação do usuário (2026-10-21)
+Não está mais empregado (Cencosud foi o último emprego). Procura vaga e estuda desenvolvimento com IA (Claude Code) e automação em tempo integral. Site e perfil já dizem isso, com o selo "Disponível para novas oportunidades". Termo escolhido: "desenvolvimento com IA" (não "vibecoding"); trocar se ele pedir.
+
+## Pendências do usuário (só ele faz)
+- Fixar no perfil: agenda-web-pro, agenda-web-pro-site, adrian-doria-portfolio (no celular: navegador em modo computador → "Customize your pins").
+- Bio do GitHub + campo Website (o `gh` não tem o escopo `user`; ou ele roda `gh auth refresh -h github.com -s user` e o Claude atualiza). Bio sugerida: "Analista ADM e Financeiro (+4 anos) estudando desenvolvimento com IA e automação. Disponível para oportunidades. n8n · PostgreSQL · Power BI · Astro."
+- LinkedIn com o mesmo discurso (Cencosud encerrado, Open to work).
 - Ligar 2FA no GitHub.
+- Revisar os textos da rodada 2 (a copy é sugestão inicial).
 - Domínio próprio (opcional).
+
+## Onde fica cada coisa publicada
+- Cópias locais dos repositórios novos foram feitas numa pasta temporária: para mexer neles de novo, clonar (`gh repo clone AdrianDoriaTI/<nome>`).
+- README do perfil: editar `github/perfil/README.md` aqui e copiar para o repositório `AdrianDoriaTI`.
+- `to-do-list` e `site-nao-clique` foram deixados privados (reversível).
 
 ## Problemas conhecidos
 - O print do portfólio (`src/assets/projetos/portfolio.png`) precisa ser refeito quando o hero mudar.
