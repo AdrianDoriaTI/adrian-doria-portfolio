@@ -5,15 +5,16 @@ import { perfil, projetos } from '../data/perfil';
 import printPortfolio from '../assets/projetos/portfolio.png';
 import printAgenda from '../assets/projetos/agenda.png';
 import printAgendaSite from '../assets/projetos/agenda-site.png';
+import printRevela from '../assets/projetos/revela.png';
 
-const imagens = { portfolio: printPortfolio, agenda: printAgenda, agendaSite: printAgendaSite } as const;
+const imagens = { portfolio: printPortfolio, agenda: printAgenda, agendaSite: printAgendaSite, revela: printRevela } as const;
 ---
 <section id="projetos" class="border-t border-line bg-surface">
   <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
     <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
       <div class="max-w-xl">
         <h2 class="text-[clamp(2rem,5vw,3.25rem)] font-semibold">O que eu já construí</h2>
-        <p class="mt-4 text-muted">Projetos reais, no ar. Abra, teste e veja o código.</p>
+        <p class="mt-4 text-muted">Projetos reais. Abra, teste e veja como funcionam.</p>
       </div>
       <a
         href={perfil.github}

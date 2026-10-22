@@ -7,7 +7,7 @@
 
 Sou analista administrativo e financeiro, com mais de 4 anos (Randstad, Stefanini e Cencosud) em compras, notas fiscais, controle orçamentário, Capex e Opex e SAP. Nesse dia a dia percebi quanto tempo vai embora em tarefas repetitivas, então me formei em Análise e Desenvolvimento de Sistemas e passei a estudar automação de processos e IA.
 
-Agora me dedico a isso em tempo integral: estudo desenvolvimento com IA todos os dias e construo projetos reais. Alguns já estão no ar, outros em andamento.
+Hoje sigo estudando e me desenvolvendo em automação e IA, e coloco isso em prática em alguns projetos.
 
 🟢 **Disponível para novas oportunidades.**
 
@@ -38,6 +38,13 @@ Agora me dedico a isso em tempo integral: estudo desenvolvimento com IA todos os
   </tr>
 </table>
 
+<a href="https://github.com/AdrianDoriaTI/revela"><img src="img/revela.png" alt="Tela de chat do Revela" width="100%"></a>
+
+### [Revela](https://github.com/AdrianDoriaTI/revela)
+Gerador de imagens com IA que roda 100% no computador. Chat em português, voz e foto de referência: um modelo de linguagem local escreve o prompt e o ComfyUI gera a imagem numa placa de 8 GB, sem nuvem.
+
+<code>Python</code> <code>FastAPI</code> <code>LLM local</code> <code>ComfyUI</code>
+
 E o próprio **[portfólio](https://github.com/AdrianDoriaTI/adrian-doria-portfolio)**, feito por mim do design ao código.
 
 ## O que eu sei fazer
@@ -52,5 +59,4 @@ E o próprio **[portfólio](https://github.com/AdrianDoriaTI/adrian-doria-portfo
 ## Agora
 
 - Estudando desenvolvimento com IA (Claude Code), automação de processos e agentes
-- Em andamento: **Revela**, gerador de imagens com IA que roda no próprio computador
 - Procuro uma vaga em que eu una o administrativo e financeiro com automação e IA

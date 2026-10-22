@@ -6,7 +6,7 @@ export const perfil = {
   cargo: 'Analista Administrativo e Financeiro',
   frase: ['Entendo o negócio.', 'Automatizo o trabalho.'],
   resumo:
-    'Analista administrativo e financeiro com mais de 4 anos de experiência. Agora me dedico a construir automações e sistemas com IA, e estou disponível para novas oportunidades.',
+    'Analista administrativo e financeiro com mais de 4 anos de experiência. Hoje sigo me desenvolvendo em automação e IA, com alguns projetos próprios, e estou disponível para novas oportunidades.',
   local: 'Nossa Senhora do Socorro, SE',
   email: 'adrian.doria454@outlook.com',
   linkedin: 'https://www.linkedin.com/in/adriandoria454',
@@ -20,7 +20,7 @@ export const sobre = {
   paragrafos: [
     'Comecei pela rotina: compras, notas fiscais, controle orçamentário, Capex e Opex, provisões no SAP. Passei pela Randstad, pela Stefanini e pela Cencosud, onde transformava números em relatórios e dashboards no Power BI.',
     'Foi nesse dia a dia que percebi quanto tempo vai embora em tarefas repetitivas. Por isso me formei em Análise e Desenvolvimento de Sistemas e passei a estudar automação de processos e IA.',
-    'Agora me dedico a isso em tempo integral: estudo desenvolvimento com IA todos os dias e construo projetos reais. Alguns já estão no ar, outros em andamento, e você pode ver cada um logo abaixo.',
+    'Hoje sigo estudando e me desenvolvendo em automação e IA, e coloco isso em prática em alguns projetos. Você pode ver cada um logo abaixo.',
   ],
   numeros: [
     { valor: 4, sufixo: '+', rotulo: 'anos em administrativo e financeiro' },
@@ -124,6 +124,20 @@ export const projetos = [
     links: {
       demo: 'https://www.agendawebpro.com.br/site/barbearias/',
       codigo: 'https://github.com/AdrianDoriaTI/agenda-web-pro-site',
+    },
+  },
+  {
+    nome: 'Revela',
+    icone: 'bot',
+    frase: 'Gerador de imagens com IA que roda 100% no computador, em português.',
+    detalhe:
+      'Chat, voz e foto de referência. Um modelo de linguagem local escreve o prompt e o ComfyUI gera a imagem numa placa de 8 GB, sem nuvem e sem assinatura.',
+    tags: ['Python', 'FastAPI', 'LLM local', 'ComfyUI'],
+    status: 'Projeto pessoal',
+    imagem: 'revela',
+    links: {
+      demo: null,
+      codigo: 'https://github.com/AdrianDoriaTI/revela',
     },
   },
   {
