@@ -27,6 +27,12 @@ URL: https://adrian-doria-portfolio.vercel.app (cada push na `main` publica).
 ## Situação do usuário (2026-10-21)
 Não está mais empregado (Cencosud foi o último emprego). Procura vaga e estuda desenvolvimento com IA (Claude Code) e automação. **Não dizer "tempo integral" nem "me dedico integralmente"** (pedido dele): o texto é "sigo estudando e me desenvolvendo em automação e IA, com alguns projetos". Site e perfil já dizem isso, com o selo "Disponível para novas oportunidades". Termo escolhido: "desenvolvimento com IA" (não "vibecoding"); trocar se ele pedir.
 
+## Posicionamento (decidido 2026-10-22)
+- Ele não programa sozinho: os projetos foram feitos com o Claude. Discurso honesto: "desenho a solução, entendo o negócio e uso IA para construir; sei explicar como funciona". Nunca dizer que ele programa em X.
+- Vagas-alvo: analista de processos, automação, BI, financeiro com automação, suporte a sistemas (não dev tradicional).
+- Código aberto só no que é prova (portfólio, site do Agenda, futuro dashboard); produto comercial (Agenda) e Revela ficam como vitrine.
+- Próximo passo sugerido: guia de estudo por projeto (como funciona em português simples + perguntas de entrevista com respostas), depois o dashboard Capex/Opex aberto.
+
 ## Pendências do usuário (só ele faz)
 - Fixar no perfil: revela, agenda-web-pro, agenda-web-pro-site, adrian-doria-portfolio (no celular: navegador em modo computador → "Customize your pins").
 - Bio do GitHub + campo Website (o `gh` não tem o escopo `user`; ou ele roda `gh auth refresh -h github.com -s user` e o Claude atualiza). Bio sugerida: "Analista ADM e Financeiro (+4 anos) estudando desenvolvimento com IA e automação. Disponível para oportunidades. n8n · PostgreSQL · Power BI · Astro."
@@ -39,6 +45,11 @@ Não está mais empregado (Cencosud foi o último emprego). Procura vaga e estud
 - Cópias locais dos repositórios novos foram feitas numa pasta temporária: para mexer neles de novo, clonar (`gh repo clone AdrianDoriaTI/<nome>`).
 - README do perfil: editar `github/perfil/README.md` aqui e copiar para o repositório `AdrianDoriaTI`.
 - `to-do-list` e `site-nao-clique` foram deixados privados (reversível).
+
+## Segurança (não esquecer)
+- NÃO tornar público `meus-apps-ia`: o histórico tem o endereço real do relay (`revela-relay.adriandoria.workers.dev`), o nome do amigo e a organização dos convites. Se abrir um dia, fazer cópia limpa sem histórico.
+- A foto de referência com as duas mulheres ficou fora da vitrine (origem incerta).
+- Opcional: cabeçalhos de segurança no portfólio (hoje só HSTS).
 
 ## Problemas conhecidos
 - O print do portfólio (`src/assets/projetos/portfolio.png`) precisa ser refeito quando o hero mudar.
