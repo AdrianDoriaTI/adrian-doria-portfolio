@@ -6,7 +6,7 @@ export const perfil = {
   cargo: 'Analista Administrativo e Financeiro',
   frase: ['4 anos em administrativo e financeiro,', 'e agora me desenvolvendo em automação e IA.'],
   resumo:
-    'Passei por compras, notas fiscais, controle orçamentário e Power BI em empresas de grande porte. Hoje crio projetos próprios com n8n e Claude Code, e estou disponível para novas oportunidades.',
+    'Experiência em SAP, requisições de compras, notas fiscais, relatórios, controle orçamentário e Power BI em empresa multinacional. Hoje estudo e desenvolvo projetos próprios com Claude Code e n8n, e estou disponível para novas oportunidades.',
   local: 'Nossa Senhora do Socorro, SE',
   email: 'adrian.doria454@outlook.com',
   linkedin: 'https://www.linkedin.com/in/adriandoria454',
