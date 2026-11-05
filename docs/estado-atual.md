@@ -18,11 +18,20 @@ URL: https://adrian-doria-portfolio.vercel.app (cada push na `main` publica).
 - Build ok. Screenshots 1440 (claro) e 375 (escuro): sem overflow.
 - gitleaks: nada encontrado no portfólio (incluindo histórico), no perfil e nos dois repositórios novos.
 
-## Decisões de 2026-11-04
-- Frase do hero: "4 anos em administrativo e financeiro, e agora me desenvolvendo em automação e IA." Mostrar as DUAS áreas em pé de igualdade (não "saí do financeiro para a automação").
-- Nada de "código" no site: cards dizem o que é, objetivo e "criado com Claude Code"; botão "Sobre o projeto no GitHub". Etiquetas sem linguagens (JS, Python etc.). Jogo 2D fica de fora por enquanto.
-- Agenda Web Pro (sistema) não tem demo; a demo é o Site Agenda Web Pro.
-- Próximo: seção "Administrativo e financeiro" (dashboards, Excel, dados fictícios) + reordenar página; README do perfil com as duas áreas; botão de currículo (PDF); og:image; refazer print do portfólio.
+## Decisões de 2026-11-04 (publicadas no site e no perfil)
+- Hero: "4 anos em administrativo e financeiro, e agora me desenvolvendo em automação e IA." Resumo: "Experiência em análise financeira, controle orçamentário, compras e dashboards em empresa multinacional. Sigo estudando e desenvolvendo projetos próprios em automação e IA, sem deixar o financeiro de lado..." (avaliar se "sem deixar o financeiro de lado" soa defensivo).
+- As DUAS áreas em pé de igualdade; nunca "saí do financeiro para a automação". Contato: "Busco oportunidades em administrativo e financeiro, principalmente onde a automação de processos faça diferença." (sem "me chame").
+- Nada de "código": cards com o que é, objetivo e como foi criado ("criado com Claude Code"); botão "Sobre o projeto no GitHub"; etiquetas sem linguagens. Jogo 2D fica de fora por enquanto. Agenda Web Pro (sistema) sem demo; a demo é o Site Agenda Web Pro.
+- "Principais conhecimentos" + "Experiência profissional" + cartão Formação/Certificações funcionam como resumo profissional (menu: "Experiência e formação").
+- README do perfil e banner (gerar-banner.py) atualizados com o mesmo discurso e publicados no repositório AdrianDoriaTI/AdrianDoriaTI.
+- Regra: não publicar a cada detalhe; só ao fechar uma parte maior.
+
+## Pendente para a próxima rodada (Adrian ainda vai pensar/ajustar)
+1. Seção "Administrativo e financeiro" (dashboards, Excel, dados fictícios) + reordenar página (hero, sobre, duas áreas, experiência, contato). Perguntei se ele tem material real ou se crio do zero.
+2. Resumo profissional: períodos de cada emprego, uma linha por conhecimento, idiomas (precisa dele; não inventar). "Fechamento contábil" só se confirmar.
+3. Botão "Baixar currículo" (precisa do PDF), og:image, refazer print do portfólio.
+4. Faixa de ferramentas repete conhecimentos: decidir se mantém.
+5. Perfil GitHub: bio/Website (`gh auth refresh -h github.com -s user`), fixar repos, 2FA (só ele). READMEs dos repos vitrine no mesmo padrão (objetivo, como funciona, como foi criado).
 
 ## Falta (próximos passos)
 1. Revela: vitrine publicada (`AdrianDoriaTI/revela`, código privado). Falta GIF/vídeo curto.

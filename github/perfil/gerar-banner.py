@@ -36,7 +36,7 @@ def banner(c):
         fios.append(f'''<line x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="{c['line']}" stroke-width="2"/>
 <line class="wire" x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="{c['accent']}" stroke-width="2.4" stroke-dasharray="{L}" stroke-dashoffset="{L}" style="animation-delay:{d}s"/>
 <circle class="pulse" cx="{x1}" cy="{y}" r="3.6" fill="{c['accentInk']}" style="animation-delay:{2.6 + i * 0.6}s;--dx:{L}px"/>''')
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Adrian Doria. Entendo o negócio. Automatizo o trabalho. Negócio, Dados, Automação e IA.">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Adrian Doria. 4 anos em administrativo e financeiro, e agora me desenvolvendo em automação e IA.">
 <defs>
   <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="{c['dot']}" fill-opacity=".16"/></pattern>
   <radialGradient id="fade" cx="78%" cy="50%" r="55%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
@@ -60,8 +60,8 @@ def banner(c):
 <rect width="{W}" height="{H}" fill="url(#dots)" mask="url(#m)"/>
 <g class="t1"><text x="56" y="150" font-size="56" font-weight="700" letter-spacing="-1.6" fill="{c['ink']}">Adrian Doria</text></g>
 <g class="t2">
-  <text x="58" y="198" font-size="24" fill="{c['muted']}">Entendo o negócio.</text>
-  <text x="58" y="230" font-size="24" font-weight="600" fill="{c['ink']}">Automatizo o trabalho.</text>
+  <text x="58" y="198" font-size="20" fill="{c['muted']}">4 anos em administrativo e financeiro,</text>
+  <text x="58" y="230" font-size="20" font-weight="600" fill="{c['ink']}">e agora me desenvolvendo em automação e IA.</text>
   <rect x="58" y="258" width="300" height="30" rx="15" fill="{c['soft']}"/>
   <text x="74" y="278" font-size="13.5" font-weight="600" fill="{c['accentInk']}">ADM e Financeiro  ·  Automação e IA</text>
 </g>
