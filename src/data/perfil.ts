@@ -6,7 +6,7 @@ export const perfil = {
   cargo: 'Analista Administrativo e Financeiro',
   frase: ['4 anos em administrativo e financeiro,', 'e agora me desenvolvendo em automação e IA.'],
   resumo:
-    'Experiência em análise financeira, controle orçamentário, compras e dashboards em empresa multinacional. Hoje estudo e desenvolvo projetos próprios em automação e IA, e estou disponível para novas oportunidades.',
+    'Experiência em análise financeira, controle orçamentário, compras e dashboards em empresa multinacional. Sigo estudando e desenvolvendo projetos próprios em automação e IA, sem deixar o financeiro de lado, e estou disponível para novas oportunidades.',
   local: 'Nossa Senhora do Socorro, SE',
   email: 'adrian.doria454@outlook.com',
   linkedin: 'https://www.linkedin.com/in/adriandoria454',
@@ -16,11 +16,11 @@ export const perfil = {
 
 // "Sobre": três tempos (o que eu sei, a virada, a prova). O último leva aos projetos.
 export const sobre = {
-  titulo: 'Do financeiro à automação',
+  titulo: 'Financeiro e automação',
   paragrafos: [
     'Comecei pela rotina: compras, notas fiscais, controle orçamentário, Capex e Opex, provisões no SAP. Passei pela Randstad, pela Stefanini e pela Cencosud, onde transformava números em relatórios e dashboards no Power BI.',
-    'Foi nesse dia a dia que percebi quanto tempo vai embora em tarefas repetitivas. Por isso cursei Análise e Desenvolvimento de Sistemas e passei a estudar automação de processos e IA.',
-    'Hoje desenho as soluções, entendo a regra de negócio e uso IA (Claude Code) para construir fluxos em n8n, bancos PostgreSQL e sites. Sei explicar como cada projeto funciona. Eles estão logo abaixo.',
+    'Foi nesse dia a dia que percebi quanto tempo vai embora em tarefas repetitivas. Por isso cursei Análise e Desenvolvimento de Sistemas e passei a estudar também automação de processos e IA.',
+    'Sigo na área financeira e administrativa e, em paralelo, desenho as soluções, entendo a regra de negócio e uso IA (Claude Code) para construir fluxos em n8n, bancos PostgreSQL e sites. Sei explicar como cada projeto funciona. Eles estão logo abaixo.',
   ],
   numeros: [
     { valor: 4, sufixo: '+', rotulo: 'anos em administrativo e financeiro' },
