@@ -30,7 +30,7 @@ export const sobre = {
 };
 
 export const fluxoIntro =
-  'Conheço a rotina por dentro, transformo números em indicadores e automatizo o que é repetitivo.';
+  'O que levo para o trabalho: a base em administrativo e financeiro, a análise de dados e o que venho desenvolvendo em automação e IA.';
 
 // Miniaturas da faixa de ferramentas. logo = marca em src/data/logos.ts; icone = ícone genérico.
 export const ferramentas = [
