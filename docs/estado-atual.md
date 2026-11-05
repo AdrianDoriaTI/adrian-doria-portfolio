@@ -1,6 +1,6 @@
 # Estado atual — Adrian Doria — Portfólio
 
-Atualizado em 2026-10-22. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
+Atualizado em 2026-11-04. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
 
 ## Onde estamos
 Rodada 2 publicada: copy nova (narrativa ADM/Finanças → automação → projetos), seção **Sobre** com números, movimento leve (D11) e projetos com prints reais e links (Agenda Web Pro e o site dele). O GitHub virou vitrine (D12): README de perfil com banner animado e 2 repositórios públicos novos.
@@ -17,6 +17,12 @@ URL: https://adrian-doria-portfolio.vercel.app (cada push na `main` publica).
 - Checklist de segurança 2026-10-22: gitleaks (histórico e arquivos) limpo em todos os repositórios públicos e no Revela; `npm audit fix` no portfólio (2 altas → 0); agenda-web-pro-site 0; pip-audit do Revela 0.
 - Build ok. Screenshots 1440 (claro) e 375 (escuro): sem overflow.
 - gitleaks: nada encontrado no portfólio (incluindo histórico), no perfil e nos dois repositórios novos.
+
+## Decisões de 2026-11-04
+- Frase do hero: "4 anos em administrativo e financeiro, e agora me desenvolvendo em automação e IA." Mostrar as DUAS áreas em pé de igualdade (não "saí do financeiro para a automação").
+- Nada de "código" no site: cards dizem o que é, objetivo e "criado com Claude Code"; botão "Sobre o projeto no GitHub". Etiquetas sem linguagens (JS, Python etc.). Jogo 2D fica de fora por enquanto.
+- Agenda Web Pro (sistema) não tem demo; a demo é o Site Agenda Web Pro.
+- Próximo: seção "Administrativo e financeiro" (dashboards, Excel, dados fictícios) + reordenar página; README do perfil com as duas áreas; botão de currículo (PDF); og:image; refazer print do portfólio.
 
 ## Falta (próximos passos)
 1. Revela: vitrine publicada (`AdrianDoriaTI/revela`, código privado). Falta GIF/vídeo curto.
