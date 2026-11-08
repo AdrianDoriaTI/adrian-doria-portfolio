@@ -19,11 +19,11 @@ import { sobre } from '../data/perfil';
     </div>
 
     <div class="flex flex-col gap-8 md:gap-10">
-      {sobre.paragrafos.map((p, i) => (
+      {sobre.paragrafos.map((p) => (
         <p
-          class:list={['story font-display text-[clamp(1.3rem,2.6vw,1.75rem)] leading-[1.35] font-medium tracking-tight', { 'story--fim': i === sobre.paragrafos.length - 1 }]}
+          class:list={['story font-display text-[clamp(1.3rem,2.6vw,1.75rem)] leading-[1.35] font-medium tracking-tight', { 'story--citacao': p.tipo === 'citacao' }]}
           data-reveal
-        >{p}</p>
+        >{p.texto}</p>
       ))}
       <a href="#projetos" class="group inline-flex items-center gap-2 self-start font-medium text-accent-ink underline-offset-4 hover:underline">
         Ver os projetos
@@ -41,5 +41,5 @@ import { sobre } from '../data/perfil';
     transition: color 0.9s var(--ease-out-expo), opacity 0.9s var(--ease-out-expo);
   }
   :global(.js) .story.is-in { color: var(--ink); opacity: 1; }
-  .story--fim { padding-left: 1.25rem; border-left: 2px solid var(--accent); }
+  .story--citacao { padding-left: 1.25rem; border-left: 2px solid var(--accent); font-style: italic; }
 </style>

@@ -1,6 +1,6 @@
 # Estado atual — Adrian Doria — Portfólio
 
-Atualizado em 2026-11-04. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
+Atualizado em 2026-11-07. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
 
 ## Onde estamos
 Rodada 2 publicada: copy nova (narrativa ADM/Finanças → automação → projetos), seção **Sobre** com números, movimento leve (D11) e projetos com prints reais e links (Agenda Web Pro e o site dele). O GitHub virou vitrine (D12): README de perfil com banner animado e 2 repositórios públicos novos.
@@ -18,8 +18,14 @@ URL: https://adrian-doria-portfolio.vercel.app (cada push na `main` publica).
 - Build ok. Screenshots 1440 (claro) e 375 (escuro): sem overflow.
 - gitleaks: nada encontrado no portfólio (incluindo histórico), no perfil e nos dois repositórios novos.
 
+## Rodada 3 (2026-11-07): Sobre e Principais conhecimentos
+- **Sobre** reescrito (texto + citação em linha própria + parágrafo de automação com vibe coding). Regras do Adrian: tom de portfólio (conhecimento, nunca "meu trabalho era/eu fazia"); lista de atividades direta, sem artigos; empresa no singular ("numa multinacional", sem citar terceirização no texto); sem programação específica, o foco é vibe coding; frases de efeito próprias, não literais. Final: "Valorizo o que construí até aqui e enxergo com grandes expectativas o que ainda está por vir." Dados do Sobre agora são objetos `{tipo:'texto'|'citacao', texto}` em `src/data/perfil.ts`.
+- **Principais conhecimentos**: cada item tem uma linha (`{nome, desc}`); texto do Negócio definido pelo Adrian (ERP SAP cita KSB1; códigos de transação só se ele confirmar quais usava).
+- Faixa de ferramentas: ainda a decidir (sugestão: remover).
+- Ainda não enviado ao repositório do perfil: `github/perfil/README.md` (alt do banner corrigido) e o discurso novo do Sobre.
+
 ## Decisões de 2026-11-04 (publicadas no site e no perfil)
-- Hero: "4 anos em administrativo e financeiro, e agora me desenvolvendo em automação e IA." Resumo: "Experiência em análise financeira, controle orçamentário, compras e dashboards em empresa multinacional. Sigo estudando e desenvolvendo projetos próprios em automação e IA, sem deixar o financeiro de lado..." (avaliar se "sem deixar o financeiro de lado" soa defensivo).
+- Hero: "4 anos em administrativo e financeiro, e agora me desenvolvendo em automação e IA." Resumo: "Experiência em análise financeira, controle orçamentário, compras e dashboards em empresa multinacional. Atualmente estudando e desenvolvendo projetos próprios em automação e IA, e estou disponível para novas oportunidades." (removido "sem deixar o financeiro de lado" a pedido do Adrian; publicado no commit a00298a em 2026-11-04, no site e no README do perfil). Só essa troca foi pedida: o resto do texto, inclusive "Comecei pela rotina…" no Sobre, fica igual. Não acrescentar nada no lugar do que foi removido. 
 - As DUAS áreas em pé de igualdade; nunca "saí do financeiro para a automação". Contato: "Busco oportunidades em administrativo e financeiro, principalmente onde a automação de processos faça diferença." (sem "me chame").
 - Nada de "código": cards com o que é, objetivo e como foi criado ("criado com Claude Code"); botão "Sobre o projeto no GitHub"; etiquetas sem linguagens. Jogo 2D fica de fora por enquanto. Agenda Web Pro (sistema) sem demo; a demo é o Site Agenda Web Pro.
 - "Principais conhecimentos" + "Experiência profissional" + cartão Formação/Certificações funcionam como resumo profissional (menu: "Experiência e formação").

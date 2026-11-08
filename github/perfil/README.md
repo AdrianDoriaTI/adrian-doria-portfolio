@@ -2,7 +2,9 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="img/banner-dark.svg">
-  <img src="img/banner-light.svg" alt="Adrian Doria. 4 anos em administrativo e financeiro, e agora me desenvolvendo em auAnalista administrativo e financeiro com mais de 4 anos de experiência em empresa multinacional (Randstad, Stefanini e Cencosud): análise financeira, controle orçamentário, compras, notas fiscais, SAP e dashboards em Power BI.
+  <img src="img/banner-light.svg" alt="Adrian Doria. 4 anos em administrativo e financeiro, e agora me desenvolvendo em automação e IA.">
+
+Analista administrativo e financeiro com mais de 4 anos de experiência em empresa multinacional (Randstad, Stefanini e Cencosud): análise financeira, controle orçamentário, compras, notas fiscais, SAP e dashboards em Power BI.
 
 Atualmente estudando e desenvolvendo projetos próprios em automação e IA. Os projetos abaixo foram criados com o Claude Code: eu defino o objetivo e as regras de negócio e valido o resultado.
 

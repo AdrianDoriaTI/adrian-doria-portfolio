@@ -17,15 +17,17 @@ export const perfil = {
 // "Sobre": três tempos (o que eu sei, a virada, a prova). O último leva aos projetos.
 export const sobre = {
   titulo: 'Financeiro e automação',
+  // tipo 'citacao' = frase em destaque, em linha própria.
+  // tipo 'citacao' = frase em destaque, em linha própria.
   paragrafos: [
-    'Comecei pela rotina: compras, notas fiscais, controle orçamentário, Capex e Opex, provisões no SAP. Passei pela Randstad, pela Stefanini e pela Cencosud, onde transformava números em relatórios e dashboards no Power BI.',
-    'Foi nesse dia a dia que percebi quanto tempo vai embora em tarefas repetitivas. Por isso cursei Análise e Desenvolvimento de Sistemas e passei a estudar também automação de processos e IA.',
-    'Sigo na área financeira e administrativa e, em paralelo, desenho as soluções, entendo a regra de negócio e uso IA (Claude Code) para construir fluxos em n8n, bancos PostgreSQL e sites. Sei explicar como cada projeto funciona. Eles estão logo abaixo.',
+    { tipo: 'texto', texto: 'Mais de quatro anos em administrativo e financeiro numa multinacional, exercendo atividades na área de finanças e depois na TI, com relação a controle de orçamento, pagamentos mensais e esporádicos de diversos fornecedores com foco nos projetos da área, novas contratações de serviço, compras de equipamentos, ciclo de compras e notas fiscais e relatórios.' },
+    { tipo: 'citacao', texto: 'Controle financeiro é necessário porque o que não se acompanha só aparece quando já não há o que corrigir. Quando orçamento e investimentos ficam visíveis, a decisão se apoia em fatos.' },
+    { tipo: 'texto', texto: 'Melhorar processos sempre me atraiu, e foi nessa busca que cheguei à automação e IA. Hoje me desenvolvo na área com vibe coding: entendo o que precisa ser feito, busco o melhor caminho, escolho as ferramentas certas e uso o Claude Code de forma inteligente e com critério, acompanhando cada etapa, da criação às melhorias e à manutenção. Tenho formação em Análise e Desenvolvimento de Sistemas e projetos próprios, como fluxos em n8n para Agentes de IA no WhatsApp, sistema web de agendamento e sites. Valorizo o que construí até aqui e enxergo com grandes expectativas o que ainda está por vir.' },
   ],
   numeros: [
     { valor: 4, sufixo: '+', rotulo: 'anos em administrativo e financeiro' },
     { valor: 3, sufixo: '', rotulo: 'empresas de grande porte' },
-    { valor: 3, sufixo: '', rotulo: 'projetos no ar para você testar' },
+    { valor: 3, sufixo: '', rotulo: 'projetos no ar disponíveis para você conferir' },
   ],
 };
 
@@ -42,28 +44,44 @@ export const ferramentas = [
   { nome: 'Claude', logo: 'claude' },
 ] as const;
 
-// Conhecimentos como um fluxo: negócio → dados → automação.
+// Conhecimentos como um fluxo: negócio → dados → automação. Cada item tem uma linha explicando o que faço.
 export const fluxo = [
   {
     id: 'negocio',
     icone: 'briefcase',
     titulo: 'Negócio',
     sub: 'Administrativo e financeiro',
-    itens: ['Controle orçamentário', 'Capex e Opex', 'Provisões e reclassificações', 'ERP SAP', 'Compras e notas fiscais'],
+    itens: [
+      { nome: 'Controle orçamentário', desc: 'Controle de todo o orçamento da área.' },
+      { nome: 'Capex e Opex', desc: 'Separação e acompanhamento de investimentos e despesas operacionais.' },
+      { nome: 'Provisões e reclassificações', desc: 'Lançamentos de provisão e reclassificações de contas e centros de custo.' },
+      { nome: 'ERP SAP', desc: 'Requisições e pedidos de compra, lançamentos individuais de fornecedores, previsões de pagamento e relatórios KSB1.' },
+      { nome: 'Compras e notas fiscais', desc: 'Lançamentos de notas fiscais e acompanhamento até o pagamento.' },
+    ],
   },
   {
     id: 'dados',
     icone: 'chart',
     titulo: 'Dados',
     sub: 'Análise e indicadores',
-    itens: ['Excel', 'Power BI', 'Dashboards', 'Relatórios gerenciais', 'SQL', 'PostgreSQL'],
+    itens: [
+      { nome: 'Excel', desc: 'Planilhas de controle, conciliação e análise do dia a dia.' },
+      { nome: 'Power BI e dashboards', desc: 'Relatórios e painéis para acompanhar os números e apoiar decisões.' },
+      { nome: 'Relatórios gerenciais', desc: 'Consolidação dos números em relatórios para a gestão.' },
+      { nome: 'SQL e PostgreSQL', desc: 'Consulta e organização de dados, usados nos meus projetos de automação.' },
+    ],
   },
   {
     id: 'automacao',
     icone: 'workflow',
     titulo: 'Automação & IA',
     sub: 'Menos trabalho manual',
-    itens: ['n8n', 'Fluxos e integrações', 'Agentes de IA', 'Claude e Claude Code', 'Automação de processos'],
+    itens: [
+      { nome: 'n8n', desc: 'Fluxos que ligam sistemas e eliminam tarefas repetitivas.' },
+      { nome: 'Integrações', desc: 'Conexão entre ferramentas, como WhatsApp, banco de dados e planilhas.' },
+      { nome: 'Agentes de IA', desc: 'Assistentes que executam etapas do processo com regras que eu defino.' },
+      { nome: 'Claude e Claude Code', desc: 'Uso de IA para construir as soluções; eu defino o objetivo e valido o resultado.' },
+    ],
   },
 ] as const;
 

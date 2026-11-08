@@ -33,9 +33,12 @@ import { fluxo, fluxoIntro } from '../data/perfil';
               </div>
             </div>
 
-            <ul class="mt-5 flex flex-wrap gap-2" aria-label={`Conhecimentos em ${no.titulo}`}>
+            <ul class="mt-5 grid gap-3" aria-label={`Conhecimentos em ${no.titulo}`}>
               {no.itens.map((item) => (
-                <li class="chip">{item}</li>
+                <li class="item">
+                  <span class="chip">{item.nome}</span>
+                  <p class="mt-1.5 text-sm text-muted">{item.desc}</p>
+                </li>
               ))}
             </ul>
           </article>
@@ -73,6 +76,7 @@ import { fluxo, fluxoIntro } from '../data/perfil';
   .node--destaque .node-icon { background: var(--accent); color: var(--on-accent); }
 
   .chip {
+    display: inline-block;
     padding: 0.3rem 0.75rem;
     border: 1px solid var(--line);
     border-radius: 999px;
