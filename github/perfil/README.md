@@ -6,7 +6,7 @@
 
 Analista administrativo e financeiro com mais de 4 anos de experiência em empresa multinacional (Randstad, Stefanini e Cencosud): análise financeira, controle orçamentário, compras, notas fiscais, SAP e dashboards em Power BI.
 
-Atualmente estudando e desenvolvendo projetos próprios em automação e IA. Os projetos abaixo foram criados com o Claude Code: eu defino o objetivo e as regras de negócio e valido o resultado.
+Atualmente estudando e desenvolvendo projetos próprios em automação e IA. Os projetos abaixo foram desenvolvidos com apoio do Claude Code: eu defino o objetivo e as regras de negócio, acompanho cada etapa, reviso, testo e ajusto os detalhes, e vou aprendendo e aplicando no processo.
 
 🟢 **Disponível para novas oportunidades.**
 
@@ -50,14 +50,15 @@ Atualmente estudando e desenvolvendo projetos próprios em automação e IA. Os 
 
 E o próprio **[portfólio](https://github.com/AdrianDoriaTI/adrian-doria-portfolio)**, desenhado por mim e construído com o Claude Code.
 
-## Conhecimentos
+## Principais conhecimentos
 
-| Administrativo e financeiro | Automação e IA |
-|---|---|
-| Análise financeira e controle orçamentário | Fluxos no n8n e integrações |
-| Capex e Opex, provisões | Projetos criados com Claude Code |
-| ERP SAP, compras e notas fiscais | Agentes de IA |
-| Excel, Power BI e dashboards | PostgreSQL e regras de negócio |
+| Negócio | Dados | Automação e IA |
+|---|---|---|
+| Controle orçamentário | Excel | n8n |
+| Capex e Opex | Power BI e dashboards | Integrações |
+| Provisões e reclassificações | Relatórios gerenciais | Agentes de IA |
+| ERP SAP | SQL e PostgreSQL | Claude e Claude Code |
+| Compras e notas fiscais | | |
 
 ## Objetivo
 

@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import { fluxo, fluxoIntro } from '../data/perfil';
+import { logos } from '../data/logos';
 ---
 <section id="conhecimentos" class="border-t border-line bg-surface">
   <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
@@ -21,7 +22,6 @@ import { fluxo, fluxoIntro } from '../data/perfil';
           <article class:list={['node', { 'node--destaque': no.id === 'automacao' }]} style={`--i:${i}`}>
             <span class="port port-in" aria-hidden="true"></span>
             <span class="port port-out" aria-hidden="true"></span>
-            <span class="status" aria-hidden="true"><Icon name="check" size={14} /></span>
 
             <div class="flex items-center gap-3">
               <span class="node-icon grid size-11 shrink-0 place-items-center rounded-xl">
@@ -36,7 +36,14 @@ import { fluxo, fluxoIntro } from '../data/perfil';
             <ul class="mt-5 grid gap-3" aria-label={`Conhecimentos em ${no.titulo}`}>
               {no.itens.map((item) => (
                 <li class="item">
-                  <span class="chip">{item.nome}</span>
+                  <span class="chip">
+                    {item.nome}
+                    {'logo' in item ? (
+                      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" set:html={logos[item.logo]} />
+                    ) : (
+                      <Icon name={item.icone} size={16} />
+                    )}
+                  </span>
                   <p class="mt-1.5 text-sm text-muted">{item.desc}</p>
                 </li>
               ))}
@@ -76,7 +83,9 @@ import { fluxo, fluxoIntro } from '../data/perfil';
   .node--destaque .node-icon { background: var(--accent); color: var(--on-accent); }
 
   .chip {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     padding: 0.3rem 0.75rem;
     border: 1px solid var(--line);
     border-radius: 999px;

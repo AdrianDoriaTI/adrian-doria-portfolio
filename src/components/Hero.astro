@@ -14,7 +14,7 @@ import { perfil } from '../data/perfil';
 
     <p class="mt-5 font-display text-[clamp(1.5rem,3.4vw,2.25rem)] leading-tight font-medium tracking-tight text-muted">
       {perfil.frase.map((linha, l) => (
-        <span class:list={['block', { 'text-ink': l === 1 }]}>
+        <span class:list={['block', { 'text-accent-ink': l === 0, 'text-ink': l === 1 }]}>
           {linha.split(' ').map((w, i) => (
             <><span class="word" style={`--d:${l * 3 + i}`}>{w}</span>{' '}</>
           ))}

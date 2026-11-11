@@ -22,7 +22,7 @@ export const sobre = {
   paragrafos: [
     { tipo: 'texto', texto: 'Mais de quatro anos em administrativo e financeiro numa multinacional, exercendo atividades na área de finanças e depois na TI, com relação a controle de orçamento, pagamentos mensais e esporádicos de diversos fornecedores com foco nos projetos da área, novas contratações de serviço, compras de equipamentos, ciclo de compras e notas fiscais e relatórios.' },
     { tipo: 'citacao', texto: 'Controle financeiro é necessário porque o que não se acompanha só aparece quando já não há o que corrigir. Quando orçamento e investimentos ficam visíveis, a decisão se apoia em fatos.' },
-    { tipo: 'texto', texto: 'Melhorar processos sempre me atraiu, e foi nessa busca que cheguei à automação e IA. Hoje me desenvolvo na área com vibe coding: entendo o que precisa ser feito, busco o melhor caminho, escolho as ferramentas certas e uso o Claude Code de forma inteligente e com critério, acompanhando cada etapa, da criação às melhorias e à manutenção. Tenho formação em Análise e Desenvolvimento de Sistemas e projetos próprios, como fluxos em n8n para Agentes de IA no WhatsApp, sistema web de agendamento e sites. Valorizo o que construí até aqui e enxergo com grandes expectativas o que ainda está por vir.' },
+    { tipo: 'texto', texto: 'Melhorar processos sempre me atraiu, e foi nessa busca que cheguei à automação e IA. Hoje me desenvolvo na área com vibe coding: entendo o que precisa ser feito, busco o melhor caminho, escolho as ferramentas certas e uso o Claude Code de forma inteligente e com critério, acompanhando cada etapa, da criação às melhorias e à manutenção. Tenho formação em Análise e Desenvolvimento de Sistemas e projetos próprios, como fluxos em n8n para Agentes de IA no WhatsApp, sistema web de agendamento, sites e um gerador de imagens com IA local. Valorizo o que construí até aqui e enxergo com grandes expectativas o que ainda está por vir.' },
   ],
   numeros: [
     { valor: 4, sufixo: '+', rotulo: 'anos em administrativo e financeiro' },
@@ -52,11 +52,11 @@ export const fluxo = [
     titulo: 'Negócio',
     sub: 'Administrativo e financeiro',
     itens: [
-      { nome: 'Controle orçamentário', desc: 'Controle de todo o orçamento da área.' },
-      { nome: 'Capex e Opex', desc: 'Separação e acompanhamento de investimentos e despesas operacionais.' },
-      { nome: 'Provisões e reclassificações', desc: 'Lançamentos de provisão e reclassificações de contas e centros de custo.' },
-      { nome: 'ERP SAP', desc: 'Requisições e pedidos de compra, lançamentos individuais de fornecedores, previsões de pagamento e relatórios KSB1.' },
-      { nome: 'Compras e notas fiscais', desc: 'Lançamentos de notas fiscais e acompanhamento até o pagamento.' },
+      { nome: 'Controle orçamentário', icone: 'chart', desc: 'Controle de todo o orçamento da área.' },
+      { nome: 'Capex e Opex', icone: 'layers', desc: 'Separação e acompanhamento de investimentos e despesas operacionais.' },
+      { nome: 'Provisões e reclassificações', icone: 'calendar', desc: 'Lançamentos de provisão e reclassificações de contas e centros de custo.' },
+      { nome: 'ERP SAP', icone: 'database', desc: 'Requisições e pedidos de compra, lançamentos individuais de fornecedores, previsões de pagamento e relatórios KSB1.' },
+      { nome: 'Compras e notas fiscais', icone: 'briefcase', desc: 'Lançamentos de notas fiscais e acompanhamento até o pagamento.' },
     ],
   },
   {
@@ -65,10 +65,10 @@ export const fluxo = [
     titulo: 'Dados',
     sub: 'Análise e indicadores',
     itens: [
-      { nome: 'Excel', desc: 'Planilhas de controle, conciliação e análise do dia a dia.' },
-      { nome: 'Power BI e dashboards', desc: 'Relatórios e painéis para acompanhar os números e apoiar decisões.' },
-      { nome: 'Relatórios gerenciais', desc: 'Consolidação dos números em relatórios para a gestão.' },
-      { nome: 'SQL e PostgreSQL', desc: 'Consulta e organização de dados, usados nos meus projetos de automação.' },
+      { nome: 'Excel', logo: 'excel', desc: 'Planilhas de controle, conciliação e análise do dia a dia.' },
+      { nome: 'Power BI', logo: 'powerbi', desc: 'Dashboards financeiros para acompanhamento e apoio a decisões.' },
+      { nome: 'Relatórios gerenciais', icone: 'dashboard', desc: 'Consolidação dos números e status em relatórios para a gestão.' },
+      { nome: 'SQL e PostgreSQL', icone: 'database', desc: 'Consulta e organização de dados, usados nos meus projetos de automação.' },
     ],
   },
   {
@@ -77,13 +77,28 @@ export const fluxo = [
     titulo: 'Automação & IA',
     sub: 'Menos trabalho manual',
     itens: [
-      { nome: 'n8n', desc: 'Fluxos que ligam sistemas e eliminam tarefas repetitivas.' },
-      { nome: 'Integrações', desc: 'Conexão entre ferramentas, como WhatsApp, banco de dados e planilhas.' },
-      { nome: 'Agentes de IA', desc: 'Assistentes que executam etapas do processo com regras que eu defino.' },
-      { nome: 'Claude e Claude Code', desc: 'Uso de IA para construir as soluções; eu defino o objetivo e valido o resultado.' },
+      { nome: 'n8n', logo: 'n8n', desc: 'Fluxos de automação de atendimento e sistema web de agendamento.' },
+      { nome: 'Integrações', icone: 'workflow', desc: 'Conexão entre ferramentas, como WhatsApp, banco de dados e planilhas.' },
+      { nome: 'Agentes de IA', icone: 'bot', desc: 'Assistentes que executam etapas do processo com regras que eu defino.' },
+      { nome: 'Claude e Claude Code', logo: 'claude', desc: 'Uso o Claude Code para construir meus projetos: defino o objetivo, acompanho cada etapa, testo e ajusto, e vou aprendendo no processo.' },
     ],
   },
 ] as const;
+
+// O que estou estudando agora. Linguagens ficam em segundo plano, de propósito.
+export const estudando = {
+  foco: [
+    { nome: 'LLMs e IA generativa', icone: 'bot' },
+    { nome: 'Claude Code', logo: 'claude' },
+    { nome: 'Agentes de IA', icone: 'bot' },
+    { nome: 'MCP (Model Context Protocol)', icone: 'workflow' },
+    { nome: 'APIs e integrações', icone: 'globe' },
+    { nome: 'Automação com n8n', logo: 'n8n' },
+    { nome: 'SQL e PostgreSQL', icone: 'database' },
+    { nome: 'Power BI e dashboards', logo: 'powerbi' },
+  ],
+  linguagens: 'Tecnologias dos meus projetos, em segundo plano: Astro, Tailwind, TypeScript, JavaScript, Python, HTML e CSS. Sites hospedados na Cloudflare e na Vercel.',
+} as const;
 
 export const experiencias = [
   {
@@ -139,7 +154,7 @@ export const projetos = [
     objetivo: 'Mostrar o Agenda Web Pro para o dono de barbearia entender e testar em poucos minutos.',
     detalhe:
       'A demonstração usa dados fictícios e tem tema claro e escuro. Eu desenhei a página e o texto, e criei o site com o Claude Code. Está publicado na internet.',
-    tags: ['Criado com Claude Code', 'Astro', 'Site publicado'],
+    tags: ['Criado com Claude Code', 'Astro', 'Tailwind', 'Cloudflare', 'Site publicado'],
     status: 'No ar',
     imagem: 'agendaSite',
     links: {
@@ -168,7 +183,7 @@ export const projetos = [
     frase: 'O site que você está vendo.',
     objetivo: 'Apresentar minha experiência, meus conhecimentos e meus projetos de forma clara.',
     detalhe: 'Eu escolhi o conteúdo, o visual e o jeito de contar a história, e construí com o Claude Code. Tema claro e escuro, no celular e no computador.',
-    tags: ['Criado com Claude Code', 'Astro', 'Site publicado'],
+    tags: ['Criado com Claude Code', 'Astro', 'Tailwind', 'Site publicado'],
     status: 'Você está aqui',
     imagem: 'portfolio',
     links: {
