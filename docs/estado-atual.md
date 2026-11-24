@@ -1,6 +1,6 @@
 # Estado atual — Adrian Doria — Portfólio
 
-Atualizado em 2026-11-07. Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
+Atualizado em 2026-11-24 (print do projeto Portfólio recomprimido: 461 KB → 350 KB). Leia ao retomar. Mantenha curto: substitua o que ficou velho (o histórico está no git).
 
 ## Onde estamos
 Rodada 2 publicada: copy nova (narrativa ADM/Finanças → automação → projetos), seção **Sobre** com números, movimento leve (D11) e projetos com prints reais e links (Agenda Web Pro e o site dele). O GitHub virou vitrine (D12): README de perfil com banner animado e 2 repositórios públicos novos.
